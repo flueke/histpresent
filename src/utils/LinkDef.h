@@ -1,0 +1,43 @@
+#ifdef __CINT__
+#pragma link off all globals;
+#pragma link off all classes;
+#pragma link off all functions;
+
+#pragma link C++ class TMrbNamedX;
+#pragma link C++ class TMrbLofNamedX;
+#pragma link C++ class TMrbTemplate;
+#pragma link C++ class TMrbEnv;
+#pragma link C++ class TMrbResource;
+#pragma link C++ class TMrbVariable;
+#pragma link C++ class TMrbWindow;
+#pragma link C++ class TMrbVarI;
+#pragma link C++ class TMrbVarF;
+#pragma link C++ class TMrbVarS;
+#pragma link C++ class TMrbVarB;
+#pragma link C++ class TMrbVarArrayI;
+#pragma link C++ class TMrbVarArrayF;
+#pragma link C++ class TMrbWindowI;
+#pragma link C++ class TMrbWindowF;
+#pragma link C++ class TMrbWindow2D-;
+#pragma link C++ class TMrbLofUserVars;
+#pragma link C++ class TMbsWindowI;
+#pragma link C++ class TMbsWindowF;
+#pragma link C++ class TMbsWindow2d-;
+#pragma link C++ class TMrbLofMacros;
+#pragma link C++ class TMrbStatistics;
+#pragma link C++ class TMrbStatEntry;
+#pragma link C++ class TMrbStatCheck;
+#pragma link C++ class TMrbString;
+#pragma link C++ class TMrbSystem;
+#pragma link C++ class TMrbHistory;
+#pragma link C++ class TMrbLofData;
+#pragma link C++ class TMrbLogMessage;
+#pragma link C++ class TMrbLogger;
+#pragma link C++ class TMrbSerialComm;
+#pragma link C++ class TMrbTail;
+#pragma link C++ class TMrbNamedArrayC+;
+#pragma link C++ class TMrbNamedArrayI+;
+#pragma link C++ class TMrbNamedArrayF+;
+#pragma link C++ class TMrbNamedArrayD+;
+#pragma link C++ class TMrbNamedDouble+;
+#endif

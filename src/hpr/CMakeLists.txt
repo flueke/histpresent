@@ -1,0 +1,49 @@
+add_executable(histpresent
+    AddFitMenus.cxx
+    Ascii2GraphDialog.cxx
+    Ascii2HistDialog.cxx
+    Ascii2NtupleDialog.cxx
+    CmdListEntry.cxx
+    EmptyHistDialog.cxx
+    FhContour.cxx
+    FillFormDialog.cxx
+    Fit2DimDialog.cxx
+    FitHist.cxx
+    Fitting.cxx
+    FontSelectDialog.cxx
+    GeneralAttDialog.cxx
+    GraphAttDialog.cxx
+    GroupOfHists.cxx
+    HandleMenus.cxx
+    histfromascii.cxx
+    HistPresent.cxx
+    hprbase.cxx
+    HprContours.cxx
+    hpr_dummy.cxx
+    HprFunc2.cxx
+    HprGaxis.cxx
+    HprLegend.cxx
+    HprStack.cxx
+    HprTh3Dialog.cxx
+    HTCanvas.cxx
+    main.cxx
+    Rebin2DimDialog.cxx
+    Set1DimOptDialog.cxx
+    Set2DimGraphDialog.cxx
+    Set2DimOptDialog.cxx
+    Set3DimOptDialog.cxx
+    SetCanvasAttDialog.cxx
+    SetColorModeDialog.cxx
+    SetHistOptDialog.cxx
+    SetOptions.cxx
+    ShiftScale.cxx
+    ShowTree.cxx
+    support.cxx
+    TMrbArray.cxx
+    TText3D.cxx
+    WhatToShowDialog.cxx
+    Windows.cxx
+    WindowSizeDialog.cxx
+)
+
+target_link_libraries(histpresent PUBLIC ROOT::RIO)

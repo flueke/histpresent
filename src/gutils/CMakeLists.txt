@@ -1,0 +1,30 @@
+add_library(gutils
+    Save2FileDialog.cxx
+    TableOfLabels.cxx
+    TGMrbButtonFrame.cxx
+    TGMrbCheckButton.cxx
+    TGMrbFileEntry.cxx
+    TGMrbFileObject.cxx
+    TGMrbFocusList.cxx
+    TGMrbGeometry.cxx
+    TGMrbGetTextAlignment.cxx
+    TGMrbHelpWindow.cxx
+    TGMrbInputDialog.cxx
+    TGMrbLabelCombo.cxx
+    TGMrbLabelEntry.cxx
+    TGMrbLayout.cxx
+    TGMrbLofKeyBindings.cxx
+    TGMrbMacroBrowser.cxx
+    TGMrbMessageViewer.cxx
+    TGMrbObject.cxx
+    TGMrbPictureButton.cxx
+    TGMrbProfile.cxx
+    TGMrbProgressBar.cxx
+    TGMrbRadioButton.cxx
+    TGMrbSliders.cxx
+    TGMrbTableFrame.cxx
+    TGMrbTextButton.cxx
+    TGMrbValuesAndText.cxx
+)
+
+target_link_libraries(gutils PUBLIC ROOT::RIO)
