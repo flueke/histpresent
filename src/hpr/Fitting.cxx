@@ -949,7 +949,7 @@ Int_t FitHist::Fit2dim(Int_t what, Int_t ndim)
 		if (env.Defined("FitOneDimDialog.fFormula")) {
 			form = env.GetValue("FitOneDimDialog.fFormula", "[0]+[1]*x + [2]*x*x");
 			TFormula ff("NNN", form);
-#if ROOTVERSION >= 60000
+#if ROOT_VERSION_CODE >= ROOT_VERSION(6, 0, 0)
 			if (!ff.IsValid())
 #else
 			if (! (ff.GetNdim() <= 0))

@@ -4,7 +4,7 @@
 #include "HprText.h"
 #include "GrCanvas.h"
 
-ClassImp(THprSplineX)
+//ClassImp(THprSplineX)
 //________________________________________________________________________
 
 THprSplineX::THprSplineX(Int_t npoints, Double_t *x, Double_t *y,

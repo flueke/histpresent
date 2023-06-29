@@ -1058,7 +1058,7 @@ Int_t SuperImpose(TCanvas * canvas, TH1 * selhist, Int_t mode)
 			}
 		}
 		if ( env.GetValue("Set1DimOptDialog.fFill1Dim", 0 ) > 0 ){ 
-#if ROOTVERSION >= 53418
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 34, 18)
 			hdisp->SetFillColorAlpha(lFillColor, lOpacity);
 #else
 			hdisp->SetFillColor(lFillColor);

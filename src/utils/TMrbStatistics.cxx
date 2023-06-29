@@ -37,7 +37,7 @@ repeat:
 }
       
 
-ClassImp(TMrbStatistics)
+//ClassImp(TMrbStatistics)
 /////////////////////////////////////////////////////////////////////////////////////////
 //  TMrbStatistics                                                                     //
 //  This class is useful if many histograms reside in a memory mapped file to speed up //
@@ -190,7 +190,7 @@ void TMrbStatistics::Print(ostream & output) const{
    output << endl << "Total size used: " << (size + 999999) / 1000000 << " Mbytes" << endl; 
 }
 
-ClassImp(TMrbStatEntry)
+//ClassImp(TMrbStatEntry)
 /////////////////////////////////////////////////////////////////////////////////////////
 //  TMrbStatEntry                                                                      //
 //  This class is used by class TMrbStatistics                                         //
@@ -284,7 +284,7 @@ Int_t TMrbStatEntry::Print(ostream & output) const {
 
 // #include "TMrbStatistics.h"
 
-ClassImp(TMrbStatCheck)
+//ClassImp(TMrbStatCheck)
 /////////////////////////////////////////////////////////////////////////////////////////
 //  TMrbStatCheck                                                                      //
 //  This class serves to implement check on histgram parameters                        //

@@ -81,8 +81,8 @@ Int_t GetFreeColorIndex()
 }
 //________________________________________________________________________________________
 
-ClassImp(MyTimer)
-ClassImp(TGMrbSliders)
+//ClassImp(MyTimer)
+//ClassImp(TGMrbSliders)
 
 //____________________________________________________________________________
 MyTimer::MyTimer(Long_t ms, Bool_t synch,  TGMrbSliders* slider):TTimer(ms,synch)

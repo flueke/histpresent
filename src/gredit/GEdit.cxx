@@ -92,7 +92,7 @@ enum EGeditCommandIds {
    M_PushPicture
 };
 
-ClassImp(GEdit)
+//ClassImp(GEdit)
 
 //______________________________________________________________________
 GEdit::GEdit()

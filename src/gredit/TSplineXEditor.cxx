@@ -45,8 +45,8 @@
 #include "TGMrbValuesAndText.h"
 #include "HprText.h"
 
-ClassImp(TSplineXEditor)
-ClassImp(ParallelGraphEditor)
+//ClassImp(TSplineXEditor)
+//ClassImp(ParallelGraphEditor)
 
 enum ESplineXWid {
    kARROW_START,
@@ -68,7 +68,7 @@ enum ESplineXWid {
 
 //______________________________________________________________________________
 
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
 TSplineXEditor::TSplineXEditor(const TGWindow *p, Int_t id, Int_t width,
                         Int_t height, UInt_t options, Pixel_t back)
    : TGedFrame(p, id, width, height, options | kVerticalFrame, back)
@@ -178,14 +178,14 @@ TSplineXEditor::TSplineXEditor(const TGWindow *p, Int_t width,
    fSleeperWidth->GetNumberEntry()->SetToolTipText("Railway sleeper width");
    f81->AddFrame(fSleeperWidth, new TGLayoutHints(kLHintsExpandX, 1, 1, 0, 1));
    fg1->AddFrame(f81, new TGLayoutHints(kLHintsTop, 1, 1, 0, 0));
-   
+
    TGCompositeFrame *f82= new TGCompositeFrame(fg1, 50, 20, kHorizontalFrame);
    label = new TGLabel(f82, "SleepCol");
    f82->AddFrame(label,new TGLayoutHints(kLHintsLeft | kLHintsCenterY, 1, 1, 0, 3));
    fSleeperColor = new TGColorSelect(f82, 0, kCOLOR);
    f82->AddFrame(fSleeperColor, new TGLayoutHints(kLHintsExpandX, 1, 1, 0, 1));
    fg1->AddFrame(f82, new TGLayoutHints(kLHintsTop, 1, 1, 0, 0));
-   
+
    AddFrame(fg1, new TGLayoutHints(kLHintsTop, 1, 1, 1, 1));
 
    TGCompositeFrame *f9 = new TGCompositeFrame(this, 50, 20, kVerticalFrame);
@@ -252,7 +252,7 @@ TSplineXEditor::TSplineXEditor(const TGWindow *p, Int_t width,
    AddFrame(fg2, new TGLayoutHints(kLHintsTop, 0, 0, 0, 0));
 
    // initialises the window layout
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
    MapSubwindows();
    Layout();
    MapWindow();
@@ -270,7 +270,7 @@ TSplineXEditor::TSplineXEditor(const TGWindow *p, Int_t width,
 TSplineXEditor::~TSplineXEditor()
 {
    // Destructor of graph editor.
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
    TGFrameElement *el;
    TIter next(GetList());
 
@@ -331,7 +331,7 @@ Double_t TSplineXEditor::Dist(Double_t x1, Double_t y1, Double_t x2, Double_t y2
 }
 //______________________________________________________________________________
 
-#if ROOTVERSION >= 51304
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 13, 4)
 void TSplineXEditor::SetModel(TObject* obj)
 {
    fSplineX = dynamic_cast<TSplineX *>(obj);
@@ -441,7 +441,7 @@ void TSplineXEditor::SetModel(TVirtualPad *pad, TObject *obj, Int_t event)
    if (fInit) ConnectSignals2Slots();
 //   SetActive();  // activates this Editor
 }
-#if ROOTVERSION >= 51304
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 13, 4)
 //______________________________________________________________________________
 
 void TSplineXEditor::ActivateBaseClassEditors(TClass* cl)
@@ -654,7 +654,7 @@ Int_t TSplineXEditor::GetColorPixelByInd(Int_t index)
 }
 //______________________________________________________________________________
 
-#if ROOTVERSION >= 51304
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 13, 4)
 ParallelGraphEditor::ParallelGraphEditor(const TGWindow *p, Int_t width,
 #else
 ParallelGraphEditor::ParallelGraphEditor(const TGWindow *p, Int_t id, Int_t width,
@@ -745,7 +745,7 @@ void ParallelGraphEditor::ConnectSignals2Slots()
 
 //______________________________________________________________________________
 
-#if ROOTVERSION >= 51304
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 13, 4)
 void ParallelGraphEditor::SetModel(TObject* obj)
 {
    fParallel = (ParallelGraph *)obj;
@@ -774,7 +774,7 @@ void ParallelGraphEditor::SetModel(TVirtualPad *pad, TObject *obj, Int_t event)
    if (fInit) ConnectSignals2Slots();
 //   SetActive();  // activates this Editor
 }
-#if ROOTVERSION >= 51304
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 13, 4)
 //______________________________________________________________________________
 
 void ParallelGraphEditor::ActivateBaseClassEditors(TClass* cl)
@@ -816,4 +816,3 @@ void ParallelGraphEditor::DoDistance()
    fParallel->GetParent()->NeedReCompute();
    fParallel->GetParent()->Paint();
 }
-

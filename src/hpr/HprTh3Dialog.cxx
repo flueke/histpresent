@@ -14,7 +14,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(HprTh3Dialog)
+//ClassImp(HprTh3Dialog)
 
 HprTh3Dialog::HprTh3Dialog(TH3 *hist, TGWindow * win) : fHist(hist)
 {

@@ -12,7 +12,7 @@
 #include "HprFunc2.h"
 extern Int_t gHprDebug;
 
-ClassImp (HprFunc2)
+//ClassImp (HprFunc2)
 
 enum EGoHCommandIds {
 	M_Option2Dim,

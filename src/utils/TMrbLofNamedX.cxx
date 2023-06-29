@@ -20,7 +20,7 @@ namespace std {} using namespace std;
 #include "TMrbLofNamedX.h"
 #include "TMrbLogger.h"
 
-ClassImp(TMrbLofNamedX)
+//ClassImp(TMrbLofNamedX)
 
 extern TMrbLogger * gMrbLog;			// access to message logging
 

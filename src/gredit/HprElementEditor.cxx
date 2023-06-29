@@ -31,8 +31,8 @@
 #include "TVirtualPad.h"
 #include "iostream"
 
-ClassImp(TGedFrame)
-ClassImp(HprElementEditor)
+//ClassImp(TGedFrame)
+//ClassImp(HprElementEditor)
 
 enum {
    kCRLA_RAD,
@@ -51,7 +51,7 @@ enum {
 };
 
 //______________________________________________________________________________
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
 HprElementEditor::HprElementEditor(const TGWindow *p, Int_t id, Int_t width,
                            Int_t height, UInt_t options, Pixel_t back)
    : TGedFrame(p, id, width, height, options | kVerticalFrame, back)
@@ -92,7 +92,7 @@ HprElementEditor::HprElementEditor(const TGWindow *p, Int_t width,
 //   fg0->SetBackgroundColor(lblue);
    this->AddFrame(fg0, new TGLayoutHints(kLHintsTop, 1, 1, 1, 1));
 
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
    TClass *cl = HprElement::Class();
    TGedElement *ge = new TGedElement;
    ge->fGedFrame = this;
@@ -105,7 +105,7 @@ HprElementEditor::HprElementEditor(const TGWindow *p, Int_t width,
 HprElementEditor::~HprElementEditor()
 {
    // Destructor of Arc editor.
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
    TGFrameElement *el;
    TIter next(GetList());
 
@@ -130,7 +130,7 @@ void HprElementEditor::ConnectSignals2Slots()
 }
 
 //______________________________________________________________________________
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
 void HprElementEditor::SetModel(TVirtualPad* pad, TObject* obj, Int_t)
 {
    fModel = 0;
@@ -158,7 +158,7 @@ void HprElementEditor::SetModel(TObject* obj)
 //   SetActive();
 }
 
-#if ROOTVERSION > 51303
+#if ROOT_VERSION_CODE > ROOT_VERSION(5, 13, 3)
 //______________________________________________________________________________
 
 void HprElementEditor::ActivateBaseClassEditors(TClass* cl)

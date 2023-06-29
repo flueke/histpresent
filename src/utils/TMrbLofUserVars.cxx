@@ -29,7 +29,7 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TMrbLofUserVars)
+//ClassImp(TMrbLofUserVars)
 
 TMrbLofUserVars * gMrbLofUserVars = NULL;		// a list of all vars and windows defined so far
 extern TMrbLogger * gMrbLog;					// access to loggin system
@@ -651,6 +651,5 @@ void TMrbLofUserVars::SetInitialFctType(TObject * Fct, UInt_t FctType) {
 
 	Fct->SetUniqueID(FctType);
 	gMrbLofUserVars->Append(Fct);
-	if (gDirectory != NULL) gDirectory->Append(Fct);
+	if (gDirectory) gDirectory->Append(Fct);
 }
-

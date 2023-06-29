@@ -25,7 +25,7 @@
 // lifo to store objects located on heap
 #define HEAP(x)	fHeap.AddFirst((TObject *) x)
 
-ClassImp(TGMrbProgressBar)
+//ClassImp(TGMrbProgressBar)
 
 TGMrbProgressBar::TGMrbProgressBar( const TGWindow * Parent,
 										const TGWindow * Main,

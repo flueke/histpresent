@@ -3,7 +3,7 @@
 #include "THprEllipse.h"
 #include "GrCanvas.h"
 
-ClassImp(THprEllipse)
+//ClassImp(THprEllipse)
 
 //________________________________________________________________________
 

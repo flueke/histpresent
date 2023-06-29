@@ -17,7 +17,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(InsertHistGraphDialog)
+//ClassImp(InsertHistGraphDialog)
 
 InsertHistGraphDialog::InsertHistGraphDialog(Int_t what) : fWhat(what)
 {

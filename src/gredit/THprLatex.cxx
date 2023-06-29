@@ -6,7 +6,7 @@
 
 const Int_t kLatex      = BIT(10);
 
-ClassImp(THprLatex)
+//ClassImp(THprLatex)
 //________________________________________________________________________
 
 THprLatex::THprLatex(Double_t x, Double_t y, const Char_t * text)

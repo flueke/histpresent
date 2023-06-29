@@ -253,8 +253,8 @@ Int_t Matches(TList * list, const char * s, Int_t * matchlength)
 //#include "TGButton.h"
 //#include "Riostream.h"
 
-ClassImp(TGedAlignSelect)
-ClassImp(TGedAlignPopup)
+//ClassImp(TGedAlignSelect)
+//ClassImp(TGedAlignPopup)
 
 EWidgetMessageTypes kC_ALIGNSEL = (EWidgetMessageTypes)1001,
 						  kALI_SELCHANGED = (EWidgetMessageTypes)2;
@@ -704,7 +704,7 @@ void TGedAlignSelect::SavePrimitive(ofstream &out, Option_t *)
 }
 //________________________________________________________________________________________
 
-ClassImp(TTLabel)
+//ClassImp(TTLabel)
 
 TTLabel::TTLabel(const TGWindow *p, TGString *text,
            GContext_t norm,
@@ -778,7 +778,7 @@ enum {
 	kIsAEditorPage  = BIT(23)
 };
 
-ClassImp(TGMrbValuesAndText)
+//ClassImp(TGMrbValuesAndText)
 
 	const Int_t MAXROWS = 500;
 

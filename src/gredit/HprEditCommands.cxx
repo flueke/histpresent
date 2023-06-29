@@ -7,7 +7,7 @@ namespace std {} using namespace std;
 
 #include "HprEditCommands.h"
 
-ClassImp(HprEditCommands)
+//ClassImp(HprEditCommands)
 
 HprEditCommands::HprEditCommands(const TGWindow *Win, Int_t /*win_width*/, 
                  TObject * calling_class, const char * cname,

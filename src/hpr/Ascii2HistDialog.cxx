@@ -22,7 +22,7 @@ extern TString gHprLocalEnv;
 //{
 //   Double xmin =
 
-ClassImp(Ascii2HistDialog)
+//ClassImp(Ascii2HistDialog)
 
 Ascii2HistDialog::Ascii2HistDialog( TGWindow * win)
 {

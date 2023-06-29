@@ -29,7 +29,7 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TMrbLofMacros)
+//ClassImp(TMrbLofMacros)
 
 const SMrbNamedXShort kMrbMacroLofEnvNames[] =
 							{

@@ -7,7 +7,7 @@
 
 namespace std {} using namespace std;
 
-ClassImp(TNamedBytes)
+//ClassImp(TNamedBytes)
 //_________________________________________________________________________
 //
 // This class puts a file into a TNamed object, this allows 

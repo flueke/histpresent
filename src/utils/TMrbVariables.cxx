@@ -23,13 +23,13 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TMrbVariable)
-ClassImp(TMrbVarI)
-ClassImp(TMrbVarF)
-ClassImp(TMrbVarS)
-ClassImp(TMrbVarB)
-ClassImp(TMrbVarArrayI)
-ClassImp(TMrbVarArrayF)
+//ClassImp(TMrbVariable)
+//ClassImp(TMrbVarI)
+//ClassImp(TMrbVarF)
+//ClassImp(TMrbVarS)
+//ClassImp(TMrbVarB)
+//ClassImp(TMrbVarArrayI)
+//ClassImp(TMrbVarArrayF)
 
 extern TMrbLofUserVars * gMrbLofUserVars;		// a list of all vars and windows defined so far
 

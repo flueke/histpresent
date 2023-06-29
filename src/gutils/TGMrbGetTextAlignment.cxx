@@ -31,7 +31,7 @@ namespace std {} using namespace std;
 //________________________________________________________________________________________
 
 
-ClassImp(TGMrbGetTextAlignment)
+//ClassImp(TGMrbGetTextAlignment)
 
 TGMrbGetTextAlignment::TGMrbGetTextAlignment(Int_t * align, const TGWindow *win,
                          const char *helptext):

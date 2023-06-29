@@ -57,7 +57,7 @@ extern Int_t gHprDebug;
 
 //__________________________________________________________________
 
-ClassImp(SetColorModeDialog)
+//ClassImp(SetColorModeDialog)
 //__________________________________________________________________
 
 SetColorModeDialog::SetColorModeDialog(TGWindow * win, Int_t batch)
@@ -156,7 +156,7 @@ https://root.cern.ch/root/html604/TColor.html#TColor:SetPalette\n\
 	if (fByNumber != 0) selected_bid = ind;
 	fValp[ind++] = &fByNumber;
 	TString tmp("ComboSelect-Palettes");
-#if ROOTVERSION < 60000
+#if ROOT_VERSION_CODE < ROOT_VERSION(6, 0, 0)
 	Int_t ncol_used = 6;
 #else
 	Int_t ncol_used = Ncol;

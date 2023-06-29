@@ -24,7 +24,7 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TMrbResource)
+//ClassImp(TMrbResource)
 
 extern TMrbLogger * gMrbLog;					// MARaBOU's message logger
 

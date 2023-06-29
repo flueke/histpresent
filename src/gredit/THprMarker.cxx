@@ -3,7 +3,7 @@
 #include "THprMarker.h"
 #include "GrCanvas.h"
 
-ClassImp(THprMarker)
+//ClassImp(THprMarker)
 //________________________________________________________________________
 
 THprMarker::THprMarker(Double_t x, Double_t y, Style_t style)

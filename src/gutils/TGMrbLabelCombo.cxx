@@ -20,7 +20,7 @@
 #include "TGTextEntry.h"
 #include "TGMrbLabelCombo.h"
 
-ClassImp(TGMrbLabelCombo)
+//ClassImp(TGMrbLabelCombo)
 
 TGMrbLabelCombo::TGMrbLabelCombo(const TGWindow * Parent,
 												const Char_t * Label,

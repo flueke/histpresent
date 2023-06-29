@@ -16,7 +16,7 @@
 
 extern TMrbLogger * gMrbLog;		// access to message logging
 
-ClassImp(TGMrbLofKeyBindings)
+//ClassImp(TGMrbLofKeyBindings)
 		
 TGMrbLofKeyBindings::TGMrbLofKeyBindings(const TGWindow * Parent) {
 //__________________________________________________________________[C++ CTOR]

@@ -6,7 +6,7 @@
 #include "Ascii2NtupleDialog.h"
 #include "hprbase.h"
 
-ClassImp(Ascii2NtupleDialog)
+//ClassImp(Ascii2NtupleDialog)
 
 Ascii2NtupleDialog::Ascii2NtupleDialog(TGWindow * win)
 {

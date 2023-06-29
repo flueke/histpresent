@@ -21,8 +21,8 @@
 #include "TGLabel.h"
 #include "TGMrbTextButton.h"
 
-ClassImp(TGMrbTextButtonList)
-ClassImp(TGMrbTextButtonGroup)
+//ClassImp(TGMrbTextButtonList)
+//ClassImp(TGMrbTextButtonGroup)
 
 TGMrbTextButtonList::TGMrbTextButtonList(const TGWindow * Parent,
 												const Char_t * Label,

@@ -35,7 +35,7 @@ void ExecGausFitG(TGraph * graph, Int_t type)
 //______________________________________________________________________________________
 //_______________________________________________________________________________________
 
-ClassImp(Ascii2GraphDialog)
+//ClassImp(Ascii2GraphDialog)
 
 Ascii2GraphDialog::Ascii2GraphDialog(TGWindow * win, Int_t winx,  Int_t winy, Int_t dim)
               : fWinx(winx), fWiny(winy), fDim(dim)

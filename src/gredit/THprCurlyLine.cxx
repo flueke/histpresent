@@ -3,7 +3,7 @@
 #include "THprCurlyLine.h"
 #include "GrCanvas.h"
 
-ClassImp(THprCurlyLine)
+//ClassImp(THprCurlyLine)
 
 //________________________________________________________________________
 

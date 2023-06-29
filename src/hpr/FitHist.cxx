@@ -97,7 +97,7 @@ extern Double_t my_transfer_function(const Double_t *x, const Double_t * /*param
 enum dowhat { expand, projectx, projecty, statonly, projectf,
 		 projectboth , profilex, profiley, projectx_func};
 
-ClassImp(FitHist)
+//ClassImp(FitHist)
 
 //_______________________________________________________________________________
 // def constructor
@@ -2776,7 +2776,7 @@ void FitHist::ProjectF()
 
 void FitHist::FastFT()
 {
-#if ROOTVERSION < 51100
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 11, 0)
 	cout << "FFT not yet available" << endl;
 #else
 	const char helpText[] =

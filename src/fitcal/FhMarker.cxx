@@ -1,7 +1,7 @@
 #include "FhMarker.h"
 
-ClassImp(FhMarkerList)
-ClassImp(FhMarker)
+//ClassImp(FhMarkerList)
+//ClassImp(FhMarker)
 /*
 Bool_t FhMarker::IsEqual(const TObject *obj) const 
 { 

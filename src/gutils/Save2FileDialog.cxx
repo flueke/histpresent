@@ -15,7 +15,7 @@
 #include "Save2FileDialog.h"
 #include "HTCanvas.h"
 
-ClassImp(Save2FileDialog)
+//ClassImp(Save2FileDialog)
 
 Save2FileDialog::Save2FileDialog(TObject * obj, const char */*lname*/, TRootCanvas *win)
 {

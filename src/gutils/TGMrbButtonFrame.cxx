@@ -18,8 +18,8 @@ namespace std {} using namespace std;
 #include "TGToolTip.h"
 #include "TGMrbButtonFrame.h"
 
-ClassImp(TGMrbButtonFrame)
-ClassImp(TGMrbSpecialButton)
+//ClassImp(TGMrbButtonFrame)
+//ClassImp(TGMrbSpecialButton)
 
 TGMrbButtonFrame::TGMrbButtonFrame(const TGWindow * Parent, const Char_t * Label, UInt_t ButtonType,
 											TMrbLofNamedX * Buttons, Int_t FrameId, Int_t NofCL,

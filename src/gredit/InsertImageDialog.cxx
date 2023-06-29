@@ -20,7 +20,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(InsertImageDialog)
+//ClassImp(InsertImageDialog)
 
 InsertImageDialog::InsertImageDialog()
 {

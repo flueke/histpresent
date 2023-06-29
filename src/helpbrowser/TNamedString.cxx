@@ -1,7 +1,7 @@
 #include "TNamedString.h"
 #include <fstream>
 
-ClassImp(TNamedString)
+//ClassImp(TNamedString)
 //_________________________________________________________________________
 //
 // This class wraps e TString into a TNamed object, this allows 

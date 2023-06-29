@@ -9,9 +9,9 @@
 #ifdef MARABOUVERS
 #include "GrCanvas.h"
 #endif
-ClassImp(TextBoxMember)
-ClassImp(TextBox)
-ClassImp(TbTimer)
+//ClassImp(TextBoxMember)
+//ClassImp(TextBox)
+//ClassImp(TbTimer)
 
 //____________________________________________________________________________
 TbTimer::TbTimer(Long_t ms, Bool_t synch,  TextBox *textbox):TTimer(ms,synch)

@@ -47,7 +47,7 @@ Double_t YLtoNDC(TPad *pad, Double_t y)
 
 //________________________________________________________________
 
-ClassImp(GroupOfGObjects)
+//ClassImp(GroupOfGObjects)
 //________________________________________________________________
 
 GroupOfGObjects::GroupOfGObjects(const char * name, Double_t x, Double_t y, TCutG* cut)

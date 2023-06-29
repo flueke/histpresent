@@ -31,8 +31,8 @@
 #include "TVirtualPad.h"
 #include "iostream"
 
-ClassImp(TGedFrame)
-ClassImp(TArcEditor)
+//ClassImp(TGedFrame)
+//ClassImp(TArcEditor)
 
 enum {
    kCRLA_RAD,
@@ -51,7 +51,7 @@ enum {
 };
 
 //______________________________________________________________________________
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
 TArcEditor::TArcEditor(const TGWindow *p, Int_t id, Int_t width,
                            Int_t height, UInt_t options, Pixel_t back)
    : TGedFrame(p, id, width, height, options | kVerticalFrame, back)
@@ -198,7 +198,7 @@ TArcEditor::TArcEditor(const TGWindow *p, Int_t width,
    f11->AddFrame(fPoCfY2Entry, new TGLayoutHints(kLHintsLeft, 7, 1, 1, 1));
 //-
 */
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
    TClass *cl = TArc::Class();
    TGedElement *ge = new TGedElement;
    ge->fGedFrame = this;
@@ -211,7 +211,7 @@ TArcEditor::TArcEditor(const TGWindow *p, Int_t width,
 TArcEditor::~TArcEditor()
 {
    // Destructor of Arc editor.
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
    TGFrameElement *el;
    TIter next(GetList());
    
@@ -256,7 +256,7 @@ void TArcEditor::ConnectSignals2Slots()
 }
 
 //______________________________________________________________________________
-#if ROOTVERSION < 51304
+#if ROOT_VERSION_CODE < ROOT_VERSION(5, 13, 4)
 void TArcEditor::SetModel(TVirtualPad* pad, TObject* obj, Int_t)
 {
    fModel = 0;
@@ -307,7 +307,7 @@ void TArcEditor::SetModel(TObject* obj)
 //   SetActive();
 }
 
-#if ROOTVERSION > 51303
+#if ROOT_VERSION_CODE > ROOT_VERSION(5, 13, 3)
 //______________________________________________________________________________
 
 void TArcEditor::ActivateBaseClassEditors(TClass* cl)

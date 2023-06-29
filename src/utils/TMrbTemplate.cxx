@@ -20,7 +20,7 @@
 #include "TMrbLogger.h"
 #include "SetColor.h"
 
-ClassImp(TMrbTemplate)
+//ClassImp(TMrbTemplate)
 
 extern TMrbLogger * gMrbLog;			// access to logging system
 

@@ -22,8 +22,8 @@
 #include "TGLabel.h"
 #include "TGMrbRadioButton.h"
 
-ClassImp(TGMrbRadioButtonList)
-ClassImp(TGMrbRadioButtonGroup)
+//ClassImp(TGMrbRadioButtonList)
+//ClassImp(TGMrbRadioButtonGroup)
 
 TGMrbRadioButtonList::TGMrbRadioButtonList(const TGWindow * Parent,
 												const Char_t * Label,

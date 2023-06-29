@@ -9,4 +9,15 @@ add_library(fitcal SHARED
     TF1Range.cxx
 )
 
-target_link_libraries(fitcal PUBLIC ROOT::RIO)
+ROOT_GENERATE_DICTIONARY(fitcal_dict MODULE fitcal LINKDEF LinkDef.h
+    CalibrationDialog.h
+    FhMarker.h
+    FhPeak.h
+    FindPeakDialog2D.h
+    FindPeakDialog.h
+    FitOneDimDialog.h
+    PeakFinder.h
+    TF1Range.h
+)
+
+target_link_libraries(fitcal PUBLIC ${HISTPRESENT_ROOT_COMPONENTS})

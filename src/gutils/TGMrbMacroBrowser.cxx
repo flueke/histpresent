@@ -47,15 +47,15 @@
 
 #include "SetColor.h"
 
-ClassImp(TGMrbMacroBrowserMain)
-ClassImp(TGMrbMacroBrowserVertical)
-ClassImp(TGMrbMacroBrowserGroup)
-ClassImp(TGMrbMacroBrowserPopup)
-ClassImp(TGMrbMacroBrowserTransient)
-ClassImp(TGMrbMacroFrame)
-ClassImp(TGMrbMacroEdit)
-ClassImp(TGMrbMacroArg)
-ClassImp(TGMrbMacroList)
+//ClassImp(TGMrbMacroBrowserMain)
+//ClassImp(TGMrbMacroBrowserVertical)
+//ClassImp(TGMrbMacroBrowserGroup)
+//ClassImp(TGMrbMacroBrowserPopup)
+//ClassImp(TGMrbMacroBrowserTransient)
+//ClassImp(TGMrbMacroFrame)
+//ClassImp(TGMrbMacroEdit)
+//ClassImp(TGMrbMacroArg)
+//ClassImp(TGMrbMacroList)
 
 const SMrbNamedX kGMrbMacroLofAclicModes[] =
 			{

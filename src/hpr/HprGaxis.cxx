@@ -10,7 +10,7 @@
 
 extern Int_t gHprDebug;
 
-ClassImp(HprGaxis)
+//ClassImp(HprGaxis)
 
 
 HprGaxis::HprGaxis(TCanvas * canvas, Double_t xmin, Double_t ymin, Double_t xmax, Double_t ymax,

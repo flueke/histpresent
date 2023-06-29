@@ -15,7 +15,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(ChangeTextDialog)
+//ClassImp(ChangeTextDialog)
 
 //_________________________________________________________________________
 

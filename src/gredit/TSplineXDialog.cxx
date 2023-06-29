@@ -12,7 +12,7 @@
 #endif
 #include "TGMrbValuesAndText.h"
 
-ClassImp(TSplineXDialog)
+//ClassImp(TSplineXDialog)
 
 TSplineXDialog::TSplineXDialog()
 {

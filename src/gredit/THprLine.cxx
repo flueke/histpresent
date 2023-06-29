@@ -3,7 +3,7 @@
 #include "THprLine.h"
 #include "GrCanvas.h"
 
-ClassImp(THprLine)
+//ClassImp(THprLine)
 
 //________________________________________________________________________
 

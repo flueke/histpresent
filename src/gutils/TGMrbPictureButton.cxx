@@ -21,8 +21,8 @@
 #include "TGLabel.h"
 #include "TGMrbPictureButton.h"
 
-ClassImp(TGMrbPictureButtonList)
-ClassImp(TGMrbPictureButtonGroup)
+//ClassImp(TGMrbPictureButtonList)
+//ClassImp(TGMrbPictureButtonGroup)
 
 TGMrbPictureButtonList::TGMrbPictureButtonList(const TGWindow * Parent,
 												const Char_t * Label,

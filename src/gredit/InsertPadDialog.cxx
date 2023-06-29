@@ -19,7 +19,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(InsertPadDialog)
+//ClassImp(InsertPadDialog)
 
 InsertPadDialog::InsertPadDialog()
 {
@@ -143,7 +143,7 @@ void InsertPadDialog::ExecuteInsert()
 	fX1 = fY1 = 0;
 	gPad->Modified();
 	gPad->Update();
-	tb->cd();InsertPadDialog
+	tb->cd();
 	SaveDefaults();
 };
 //____________________________________________________________________________
@@ -202,4 +202,3 @@ void InsertPadDialog::CloseDown(Int_t wid)
 	if (wid != -2) SaveDefaults();
 	delete this;
 }
-

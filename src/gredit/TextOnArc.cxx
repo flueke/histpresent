@@ -5,7 +5,7 @@
 #include <iostream>
 #include "TextOnArc.h"
 
-ClassImp (TextOnArc)
+//ClassImp (TextOnArc)
 
 Double_t pixtol(UInt_t w)
 {

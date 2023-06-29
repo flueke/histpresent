@@ -18,7 +18,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(InsertTextBoxDialog)
+//ClassImp(InsertTextBoxDialog)
 
 InsertTextBoxDialog::InsertTextBoxDialog()
 {

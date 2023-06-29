@@ -28,7 +28,7 @@
 
 enum ERefTypes {kTextOnly, kTextRef, kCanvasRef, kGifRef, kPsRef, kJpegRef};
 
-ClassImp(TMrbHelpBrowser)
+//ClassImp(TMrbHelpBrowser)
 
 //_______________________________________________________________________________
 //

@@ -13,7 +13,7 @@
 
 #include "TMrbNamedDouble.h"
 
-ClassImp(TMrbNamedDouble)
+//ClassImp(TMrbNamedDouble)
 
 Int_t TMrbNamedDouble::Compare(const TObject * Dbl) const {
 //________________________________________________________________[C++ METHOD]

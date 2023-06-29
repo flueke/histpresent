@@ -18,7 +18,7 @@
 #include "HprStack.h"
 #include "hprbase.h"
 
-ClassImp (HprStack)
+//ClassImp (HprStack)
 static Int_t gSeqNumberStack = 0;
 
 enum EGoHCommandIds {
@@ -637,7 +637,7 @@ void HprStack::SetAttributes()
 				fStack->SetMaximum(fStackMax);
 			if ( fFill_1Dim[i] ) {
 				hist->SetFillStyle(fFillStyle[i]);
-#if ROOTVERSION >= 53418
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 34, 18)
 				hist->SetFillColorAlpha(fFillColor[i], fFillTrans[i]);
 				ohist->SetFillColorAlpha(fFillColor[i], fFillTrans[i]);
 #else
@@ -659,7 +659,7 @@ void HprStack::SetAttributes()
 			hist->SetLineColor(fLineColor[i]);
 			hist->SetLineStyle(fLineStyle[i]);
 			hist->SetLineWidth(fLineWidth[i]);
-#if ROOTVERSION >= 53418
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 34, 18)
 			ohist->SetLineColorAlpha(fLineColor[i], fLineTrans[i]);
 #else
 			ohist->SetLineColor(fLineColor[i]);
@@ -673,7 +673,7 @@ void HprStack::SetAttributes()
 				hist->SetMarkerColor(fMarkerColor[i]);
 				hist->SetMarkerSize(fMarkerSize[i]);
 				ohist->SetMarkerStyle(fMarkerStyle[i]);
-#if ROOTVERSION >= 53418
+#if ROOT_VERSION_CODE >= ROOT_VERSION(5, 34, 18)
 				ohist->SetMarkerColorAlpha(fMarkerColor[i], fMarkerTrans[i]);
 #else
 				ohist->SetMarkerColor(fMarkerColor[i]);

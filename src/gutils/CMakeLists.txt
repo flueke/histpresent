@@ -1,4 +1,4 @@
-add_library(gutils
+add_library(gutils SHARED
     Save2FileDialog.cxx
     TableOfLabels.cxx
     TGMrbButtonFrame.cxx
@@ -27,4 +27,35 @@ add_library(gutils
     TGMrbValuesAndText.cxx
 )
 
-target_link_libraries(gutils PUBLIC ROOT::RIO)
+ROOT_GENERATE_DICTIONARY(gutils_dict MODULE gutils LINKDEF LinkDef.h
+    Save2FileDialog.h
+    TableOfLabels.h
+    TGMrbButtonFrame.h
+    TGMrbCheckButton.h
+    TGMrbFileEntry.h
+    TGMrbFileObject.h
+    TGMrbFocusList.h
+    TGMrbGeometry.h
+    TGMrbGetTextAlignment.h
+    TGMrbHelpWindow.h
+    TGMrbInputDialog.h
+    TGMrbLabelCombo.h
+    TGMrbLabelEntry.h
+    TGMrbLayout.h
+    TGMrbLofKeyBindings.h
+    TGMrbMacroBrowser.h
+    TGMrbMessageViewer.h
+    TGMrbObjectCombo.h
+    TGMrbObject.h
+    TGMrbPictureButton.h
+    TGMrbProfile.h
+    TGMrbProgressBar.h
+    TGMrbRadioButton.h
+    TGMrbSliders.h
+    TGMrbTableFrame.h
+    TGMrbTextButton.h
+    TGMrbValuesAndText.h
+)
+
+target_link_libraries(gutils PUBLIC ${HISTPRESENT_ROOT_COMPONENTS})
+

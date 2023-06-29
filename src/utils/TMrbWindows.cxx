@@ -28,13 +28,13 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TMrbWindow)
-ClassImp(TMrbWindowI)
-ClassImp(TMrbWindowF)
-ClassImp(TMrbWindow2D)
-ClassImp(TMbsWindowI)
-ClassImp(TMbsWindowF)
-ClassImp(TMbsWindow2d)
+//ClassImp(TMrbWindow)
+//ClassImp(TMrbWindowI)
+//ClassImp(TMrbWindowF)
+//ClassImp(TMrbWindow2D)
+//ClassImp(TMbsWindowI)
+//ClassImp(TMbsWindowF)
+//ClassImp(TMbsWindow2d)
 
 extern TMrbLogger * gMrbLog;					// MARaBOU's message logger
 extern TMrbLofUserVars * gMrbLofUserVars;		// a list of all vars and windows defined so far

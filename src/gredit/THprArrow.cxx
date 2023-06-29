@@ -3,7 +3,7 @@
 #include "THprArrow.h"
 #include "GrCanvas.h"
 
-ClassImp(THprArrow)
+//ClassImp(THprArrow)
 
 //________________________________________________________________________
 

@@ -3,7 +3,7 @@
 #include "THprTextBox.h"
 #include "GrCanvas.h"
 
-ClassImp(THprTextBox)
+//ClassImp(THprTextBox)
 
 //________________________________________________________________________
 

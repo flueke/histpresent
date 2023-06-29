@@ -3,7 +3,7 @@
 #include "THprCurlyArc.h"
 #include "GrCanvas.h"
 
-ClassImp(THprCurlyArc)
+//ClassImp(THprCurlyArc)
 
 //________________________________________________________________________
 

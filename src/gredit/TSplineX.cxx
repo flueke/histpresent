@@ -93,11 +93,11 @@ namespace std {} using namespace std;
   (A_blend[0]*p0->dim+A_blend[1]*p1->dim+A_blend[2]*p2->dim+A_blend[3]*p3->dim)
 
 
-ClassImp(TSplineX)
-ClassImp(ControlGraph)
-ClassImp(ParallelGraph)
-ClassImp(PolyLineNoEdit)
-ClassImp(RailwaySleeper)
+//ClassImp(TSplineX)
+//ClassImp(ControlGraph)
+//ClassImp(ParallelGraph)
+//ClassImp(PolyLineNoEdit)
+//ClassImp(RailwaySleeper)
 
 //_____________________________________________________________________
 

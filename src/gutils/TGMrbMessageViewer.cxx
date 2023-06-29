@@ -35,7 +35,7 @@ const SMrbNamedX kGMrbMsgLofActions[] =
 // lifo to store objects located on heap
 #define HEAP(x)	fHeap.AddFirst((TObject *) x)
 
-ClassImp(TGMrbMessageViewer)
+//ClassImp(TGMrbMessageViewer)
 
 TGMrbMessageViewer::TGMrbMessageViewer( const TGWindow * Parent,
 										const TGWindow * Main,

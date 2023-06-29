@@ -51,4 +51,56 @@ add_library(gredit SHARED
     XGrabDialog.cxx
 )
 
-target_link_libraries(gredit PUBLIC ROOT::RIO)
+ROOT_GENERATE_DICTIONARY(gredit_dict MODULE gredit LINKDEF LinkDef.h
+    ChangeTextDialog.h
+    CreateCDlabel.h
+    CurlyLineWithArrowDialog.h
+    EditMarker.h
+    FeynmanDiagramDialog.h
+    GEdit.h
+    GrCanvas.h
+    GroupOfGObjects.h
+    HprEditBits.h
+    HprEditCommands.h
+    HprElementEditor.h
+    HprElement.h
+    HprImage.h
+    HprPlaneManager.h
+    HprRaRegion.h
+    HprText.h
+    HTPad.h
+    InsertArcDialog.h
+    InsertAxisDialog.h
+    InsertFunctionDialog.h
+    InsertHistGraphDialog.h
+    InsertImageDialog.h
+    InsertPadDialog.h
+    InsertTextBoxDialog.h
+    InsertTextDialog.h
+    MarkerLineDialog.h
+    TArcEditor.h
+    TCurlyLineWithArrow.h
+    TextBoxEditor.h
+    TextBox.h
+    TextOnArc.h
+    THprArc.h
+    THprArrow.h
+    THprCurlyArc.h
+    THprCurlyLine.h
+    THprCurlyLineWithArrow.h
+    THprEllipse.h
+    THprGaxis.h
+    THprGraph.h
+    THprLatex.h
+    THprLine.h
+    THprMarker.h
+    THprPolyLine.h
+    THprSplineX.h
+    THprTextBox.h
+    TSplineXDialog.h
+    TSplineXEditor.h
+    TSplineX.h
+    XGrabDialog.h
+)
+
+target_link_libraries(gredit PUBLIC ${HISTPRESENT_ROOT_COMPONENTS})

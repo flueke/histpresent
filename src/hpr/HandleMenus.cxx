@@ -351,7 +351,7 @@ static const char *gSaveAsTypes[] = { "PostScript",   "*.ps",
 												  "All files",    "*",
 												  0,              0 };
 
-ClassImp (HandleMenus)
+//ClassImp (HandleMenus)
 
 HandleMenus::HandleMenus(HTCanvas * c, HistPresent * hpr, FitHist * fh, TObject *obj)
 				  : TGFrame(gClient->GetRoot(), 10 ,10),

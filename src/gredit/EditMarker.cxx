@@ -1,5 +1,5 @@
 #include "EditMarker.h"
-ClassImp(EditMarker)
+//ClassImp(EditMarker)
 
 EditMarker::EditMarker(Float_t x, Float_t y) : TMarker(x,y,2)
 {

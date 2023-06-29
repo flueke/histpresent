@@ -27,7 +27,7 @@ namespace std {} using namespace std;
 
 #include "TGMrbFileEntry.h"
 
-ClassImp(TGMrbFileEntry)
+//ClassImp(TGMrbFileEntry)
 
 TGMrbFileEntry::TGMrbFileEntry(const TGWindow * Parent,
 												const Char_t * Label,

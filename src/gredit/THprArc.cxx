@@ -1,3 +1,4 @@
+#include "TVirtualX.h"
 #include "TROOT.h"
 #include "TMath.h"
 #include "Riostream.h"
@@ -5,7 +6,7 @@
 #include "GrCanvas.h"
 
 const Double_t kPI = 3.14159265358979323846;
-ClassImp(THprArc)
+//ClassImp(THprArc)
 
 //________________________________________________________________________
 
@@ -206,14 +207,14 @@ void   THprArc::ExecuteEvent(Int_t event, Int_t px, Int_t py)
          for (i=0;i<=npe;i++) { x[i] += dpx; y[i] += dpy;}
          for (i=0;i<npe;i++) gVirtualX->DrawLine(x[i], y[i], x[i+1], y[i+1]);
       }
-		
+
       pTx = pBx = px1;
       pRx = px1+r1;
       pLx = px1-r1;
       pRy = pLy = py1;
       pTy = py1-r1;
       pBy = py1+r1;
-		
+
       pxold = px;
       pyold = py;
       break;

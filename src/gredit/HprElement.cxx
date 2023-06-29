@@ -2,7 +2,7 @@
 #include "HTPad.h"
 #include "GrCanvas.h"
 
-ClassImp(HprElement)
+//ClassImp(HprElement)
 
 HprElement::HprElement(TObject * daughter) :
             fDaughter(daughter)

@@ -346,8 +346,8 @@ coords xchar;
 coords ychar; 
 ccount nchar;
 
-ClassImp(TText3D)
-ClassImp(TPol3Dtext)
+//ClassImp(TText3D)
+//ClassImp(TPol3Dtext)
 
 TPol3Dtext::TPol3Dtext(Int_t n, TText3D *text)
 :  TPolyLine3D(n) , fText(text)

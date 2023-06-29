@@ -3,7 +3,7 @@
 #include "THprGraph.h"
 #include "GrCanvas.h"
 
-ClassImp(THprGraph)
+//ClassImp(THprGraph)
 //________________________________________________________________________
 
 THprGraph::THprGraph(Int_t npoints, Double_t *x, Double_t *y)

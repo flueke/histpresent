@@ -10,7 +10,7 @@
 #include <fstream>
 //______________________________________________________________________________
 
-ClassImp(AddFitMenus)
+//ClassImp(AddFitMenus)
 
 enum Ecmds {kFHFitGausLBg, kFHFitExp, kFHFitPol, kFHFitForm,
             kFHCalibrate, kFHFindPeaks,

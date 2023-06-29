@@ -5,7 +5,7 @@
 #include <iostream>
 #include <iomanip>
 
-ClassImp(FhContour)
+//ClassImp(FhContour)
 
 //__________________________________________________________________________
 

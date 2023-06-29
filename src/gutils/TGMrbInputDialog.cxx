@@ -183,7 +183,7 @@ extern Int_t Matches(TList * list, const char * s, Int_t * matchlength);
 //________________________________________________________________________________________
 
 
-ClassImp(TGMrbInputDialog)
+//ClassImp(TGMrbInputDialog)
 
 TGMrbInputDialog::TGMrbInputDialog(const char *Prompt, const char *DefVal, 
                          Int_t * Return, char *retstr,const TGWindow *Win,

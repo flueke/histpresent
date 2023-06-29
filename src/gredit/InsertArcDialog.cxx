@@ -19,7 +19,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(InsertArcDialog)
+//ClassImp(InsertArcDialog)
 
 InsertArcDialog::InsertArcDialog()
 {

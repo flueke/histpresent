@@ -24,8 +24,8 @@ namespace std {} using namespace std;
 #include "SetColor.h"
 #include "TMrbLogger.h"
 
-ClassImp(TMrbLogMessage)
-ClassImp(TMrbLogger)
+//ClassImp(TMrbLogMessage)
+//ClassImp(TMrbLogger)
 
 const SMrbNamedXShort kMrbMsgTypes[] =
 							{

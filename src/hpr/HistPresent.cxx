@@ -214,7 +214,7 @@ const char AttrTemplate[]=
 ";
 //_____________________________________________________________________________________
 
-ClassImp(HistPresent)
+//ClassImp(HistPresent)
 
 // default constructor
 

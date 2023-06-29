@@ -31,9 +31,9 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TGMrbGC)
-ClassImp(TGMrbProfile)
-ClassImp(TGMrbLofProfiles)
+//ClassImp(TGMrbGC)
+//ClassImp(TGMrbProfile)
+//ClassImp(TGMrbLofProfiles)
 
 TGMrbLofProfiles * gMrbLofProfiles = NULL;	// system list of graph envs
 

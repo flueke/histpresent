@@ -3,7 +3,7 @@
 #include "THprGaxis.h"
 #include "GrCanvas.h"
 
-ClassImp(THprGaxis)
+//ClassImp(THprGaxis)
 
 //________________________________________________________________________
 

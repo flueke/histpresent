@@ -2,8 +2,8 @@
 #include "TMrbArrayD.h"
 #include "TMath.h"
 
-ClassImp(TMrbArrayF)
-ClassImp(TMrbArrayD)
+//ClassImp(TMrbArrayF)
+//ClassImp(TMrbArrayD)
 
 TMrbArrayF::TMrbArrayF(Int_t n) : TArrayF(n), fLowEdge(0), fBinWidth(1) {};
 TMrbArrayF::TMrbArrayF(Int_t n, const Float_t * array) 

@@ -5,7 +5,7 @@
 #include "HTPad.h"
 #include "GrCanvas.h"
 
-ClassImp(HTPad)
+//ClassImp(HTPad)
 
 //________________________________________________________________________
 

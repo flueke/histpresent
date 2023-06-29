@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-ClassImp(Rebin2DimDialog)
+//ClassImp(Rebin2DimDialog)
 
 Rebin2DimDialog::Rebin2DimDialog(TH2* hist, TGWindow * win)
 {
@@ -16,7 +16,7 @@ If number of channels in X or Y are not a multiple\n\
 of the rebin values, channels at upper X and Y are\n\
 discarded.\n\
 ";
-	
+
 	if (win) {
 		fCanvas = ((TRootCanvas*)win)->Canvas();
 		fCanvas->Connect("HTCanvasClosed()", this->ClassName(), this, "CloseDialog()");
@@ -30,7 +30,7 @@ discarded.\n\
 	fNewName += "_rebinned";
 	fNewTitle = hist->GetTitle();
 	fNewTitle += "_rebinned";
-	
+
 	fBinLowX =  1;
 	fBinUpX  = hist->GetNbinsX();
 	fBinLowY = 1;
@@ -41,7 +41,7 @@ discarded.\n\
 	fNewNbinsY = fBinUpY / fRebinY;
 	static TString rebincmd("ExecuteRebin()");
 	static TString printcmd("PrintHistParams()");
-	
+
 	fRow_lab->Add(new TObjString("StringValue_New hist name "));
 	fValp[ind++] = &fNewName;
 	fRow_lab->Add(new TObjString("StringValue_New hist title"));
@@ -92,19 +92,19 @@ Rebin2DimDialog::~Rebin2DimDialog()
 	}
 }
 //______________________________________________________________________
-	
+
 void Rebin2DimDialog::PrintHistParams()
 {
 	cout << "Original histogram:" <<endl;
 	cout << "Low X: " << fHist->GetXaxis()->GetXmin()
 		  << " Up X: " << fHist->GetXaxis()->GetXmax()
-		  << " NbinX : " << fHist->GetNbinsX() 
+		  << " NbinX : " << fHist->GetNbinsX()
 		  << " XbinWidth: " << fHist->GetXaxis()->GetBinWidth(1) << endl;
 	cout << "Low Y: " << fHist->GetYaxis()->GetXmin()
 		  << " Up Y: " << fHist->GetYaxis()->GetXmax()
-		  << " NbinY : " << fHist->GetNbinsY() 
+		  << " NbinY : " << fHist->GetNbinsY()
 		  << " YbinWidth: " << fHist->GetYaxis()->GetBinWidth(1) << endl;
-		  
+
 	cout << "New histogram:" <<endl;
 	Double_t xmin = fHist->GetXaxis()->GetBinLowEdge(fBinLowX);
 	Double_t xmax = fHist->GetXaxis()->GetBinUpEdge(fBinLowX + fRebinX*fNewNbinsX-1);
@@ -114,7 +114,7 @@ void Rebin2DimDialog::PrintHistParams()
 	Double_t ywid = (ymax - ymin) / (Double_t)fNewNbinsY;
 	cout << "Low X: " << xmin
 		  << " Up X: " << xmax
-		  << " NbinX : " << fNewNbinsX 
+		  << " NbinX : " << fNewNbinsX
 		  << " XbinWidth: " << xwid<< endl;
 	cout << "Low Y: " << ymin
 		  << " Up Y: " << ymax
@@ -154,7 +154,7 @@ void Rebin2DimDialog::ExecuteRebin()
 	}
 	hr->SetEntries(nfill);
 	gHpr->ShowHist(hr);
-			
+
 }
 //______________________________________________________________________
 
@@ -162,7 +162,7 @@ void Rebin2DimDialog::RestoreDefaults()
 {
 }
 //______________________________________________________________________
-	
+
 void Rebin2DimDialog::CRButtonPressed(Int_t /*wid*/, Int_t bid, TObject */*obj*/)
 {
 	//	TCanvas *canvas = (TCanvas *)obj;

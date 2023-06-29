@@ -1,7 +1,7 @@
 #include "Riostream.h"
 #include "HprRaRegion.h"
 
-ClassImp (HprRaRegion)
+//ClassImp (HprRaRegion)
 
 HprRaRegion::HprRaRegion(Double_t x1, Double_t y1, Double_t x2, Double_t y2) : TBox(x1, y1, x2, y2)
 {

@@ -21,8 +21,8 @@
 #include "TGLabel.h"
 #include "TGMrbCheckButton.h"
 
-ClassImp(TGMrbCheckButtonList)
-ClassImp(TGMrbCheckButtonGroup)
+//ClassImp(TGMrbCheckButtonList)
+//ClassImp(TGMrbCheckButtonGroup)
 
 TGMrbCheckButtonList::TGMrbCheckButtonList(const TGWindow * Parent,
 												const Char_t * Label,

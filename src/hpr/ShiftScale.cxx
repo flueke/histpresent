@@ -19,7 +19,7 @@
 #include <fstream>
 //______________________________________________________________________________
 
-ClassImp(ShiftScale)
+//ClassImp(ShiftScale)
 
 enum Ecmds {M_FitFormula, M_Save2File, M_Graph2File, M_OptionHist,
 				M_OptionPad};

@@ -21,7 +21,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(FillFormDialog)//	fWindow = NULL;
+//ClassImp(FillFormDialog)//	fWindow = NULL;
 
 
 FillFormDialog::FillFormDialog()

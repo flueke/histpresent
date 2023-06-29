@@ -13,7 +13,7 @@
 
 #include "TMrbNamedX.h"
 
-ClassImp(TMrbNamedX)
+//ClassImp(TMrbNamedX)
 
 const Char_t * TMrbNamedX::GetFullName(TString & FullName, Int_t Base, Bool_t IndexFlag) const {
 //________________________________________________________________[C++ METHOD]

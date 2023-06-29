@@ -1,12 +1,12 @@
 #include "TMrbNamedArray.h"
 
-ClassImp(TMrbNamedArrayC)
+//ClassImp(TMrbNamedArrayC)
 
-ClassImp(TMrbNamedArrayI)
+//ClassImp(TMrbNamedArrayI)
 
-ClassImp(TMrbNamedArrayF)
+//ClassImp(TMrbNamedArrayF)
 
-ClassImp(TMrbNamedArrayD)
+//ClassImp(TMrbNamedArrayD)
 //__________________________________________________________________________
 
 TMrbNamedArrayC::TMrbNamedArrayC(const char* name, const char* title, 

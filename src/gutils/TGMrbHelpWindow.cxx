@@ -4,7 +4,7 @@ namespace std {} using namespace std;
 #include "TVirtualX.h"
 #include <iostream>
 
-ClassImp(TGMrbHelpWindow)
+//ClassImp(TGMrbHelpWindow)
 
 //______________________________________________________________________________
  TGMrbHelpWindow::TGMrbHelpWindow(const TGWindow *main,

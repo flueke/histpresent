@@ -14,7 +14,7 @@
 #include "TGFrame.h"
 #include "TGMrbObject.h"
 
-ClassImp(TGMrbObject)
+//ClassImp(TGMrbObject)
 
 TGMrbLayout * TGMrbObject::SetupGC(TGMrbLayout * Layout, UInt_t FrameOptions) {
 //________________________________________________________________[C++ METHOD]

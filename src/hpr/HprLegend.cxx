@@ -4,7 +4,7 @@
 #include "HprLegend.h"
 #include <iostream>
 
-ClassImp(HprLegend)
+//ClassImp(HprLegend)
 
 //________________________________________________________________________
 

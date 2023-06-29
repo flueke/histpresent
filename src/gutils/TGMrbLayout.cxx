@@ -26,7 +26,7 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TGMrbLayout)
+//ClassImp(TGMrbLayout)
 
 extern TMrbLogger * gMrbLog;			// access to message lgging
 

@@ -22,7 +22,7 @@
 
 extern TMrbLogger * gMrbLog;
 
-ClassImp(TMrbTail)
+//ClassImp(TMrbTail)
 
 TMrbTail::TMrbTail(const Char_t * TailName, const Char_t * TailFile) : TMrbNamedX(0, TailName, "") {
 //__________________________________________________________________[C++ CTOR]

@@ -29,9 +29,9 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TGMrbTableFrame)
-ClassImp(TGMrbTableOfInts)
-ClassImp(TGMrbTableOfDoubles)
+//ClassImp(TGMrbTableFrame)
+//ClassImp(TGMrbTableOfInts)
+//ClassImp(TGMrbTableOfDoubles)
 
 #ifdef MARABOUVERS
 extern TMrbLogger * gMrbLog;			// access to message logging

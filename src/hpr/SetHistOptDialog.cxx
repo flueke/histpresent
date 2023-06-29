@@ -23,7 +23,7 @@ extern Int_t gHprDebug;
 
 namespace std {} using namespace std;
 
-ClassImp(SetHistOptDialog)
+//ClassImp(SetHistOptDialog)
 /*
 Int_t   SetHistOptDialog::fFill1Dim      = 0;
 Color_t SetHistOptDialog::fHistFillColor = 0;

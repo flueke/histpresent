@@ -28,8 +28,8 @@
 
 #include "SetColor.h"
 
-ClassImp(TGMrbTextEntry)
-ClassImp(TGMrbLabelEntry)
+//ClassImp(TGMrbTextEntry)
+//ClassImp(TGMrbLabelEntry)
 
 extern TMrbLogger * gMrbLog;		// access to message logging
 

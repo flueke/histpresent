@@ -1,6 +1,6 @@
 #include "HprText.h"
 
-ClassImp(HprText)
+//ClassImp(HprText)
 
 HprText::HprText(const char * text)
 {

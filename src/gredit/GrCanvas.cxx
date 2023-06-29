@@ -18,7 +18,7 @@
 
 const Size_t kDefaultCanvasSize   = 20;
 
-ClassImp(GrCanvas)
+//ClassImp(GrCanvas)
 
 //____________________________________________________________________________
 GrCanvas::GrCanvas():TCanvas()

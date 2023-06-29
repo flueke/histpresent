@@ -6,8 +6,8 @@
 // Keywords:
 // Author:         R. Lutter
 // Mailto:         <a href=mailto:rudi.lutter@physik.uni-muenchen.de>R. Lutter</a>
-// Revision:       $Id: TGMrbFileObject.cxx,v 1.25 2011-07-26 08:41:50 Marabou Exp $       
-// Date:           
+// Revision:       $Id: TGMrbFileObject.cxx,v 1.25 2011-07-26 08:41:50 Marabou Exp $
+// Date:
 // Layout:
 //Begin_Html
 /*
@@ -33,13 +33,14 @@ namespace std {} using namespace std;
 #include "TGMrbFileObject.h"
 
 // file types
-static Char_t * rootFileTypes[] =	{	"ROOT files", 	"*.root",
-										"All files",	"*",
-                            			NULL,			NULL
-									};
+static const Char_t *rootFileTypes[] = {
+	"ROOT files", "*.root",
+	 "All files", "*",
+	 NULL, NULL
+};
 
-ClassImp(TGMrbFileObjectCombo)
-ClassImp(TGMrbFileObjectListBox)
+//ClassImp(TGMrbFileObjectCombo)
+//ClassImp(TGMrbFileObjectListBox)
 
 TGMrbFileObjectCombo::TGMrbFileObjectCombo(const TGWindow * Parent,
 												const Char_t * Label,
@@ -104,11 +105,11 @@ TGMrbFileObjectCombo::TGMrbFileObjectCombo(const TGWindow * Parent,
 	fEC = new TGVerticalFrame(this, ComboWidth, Height, kChildFrame, FrameGC->BG());
 	fHeap.AddFirst((TObject *) fEC);
 	this->AddFrame(fEC, frameLayout);
-		
+
 	fEB = new TGHorizontalFrame(fEC, ComboWidth, Height, kChildFrame, FrameGC->BG());
 	fHeap.AddFirst((TObject *) fEB);
 	fEC->AddFrame(fEB, frameLayout);
-		
+
 	TGLayoutHints * btnLayout = new TGLayoutHints(kLHintsRight | kLHintsCenterY, 0, 0, 0);
 	fHeap.AddFirst((TObject *) btnLayout);
 	fBrowse = new TGPictureButton(fEB, fClient->GetPicture("ofolder_t.xpm"), 0);
@@ -128,14 +129,14 @@ TGMrbFileObjectCombo::TGMrbFileObjectCombo(const TGWindow * Parent,
 	fHeap.AddFirst((TObject *) fEntry);
 	fEB->AddFrame(fEntry, EntryGC->LH());
 	fEntry->Resize(EntryWidth - bSize, Height);
-	
+
 	fCombo = new TGComboBox(fEC, FrameId, ComboOptions, ComboGC->BG());
 	fHeap.AddFirst((TObject *) fCombo);
 	fEC->AddFrame(fCombo, ComboGC->LH());
 	((TGListBox *) fCombo->GetListBox())->SetHeight(Height * 10);
 	fCombo->Resize(ComboWidth, Height);
 	fCombo->Connect("Selected(Int_t)", this->ClassName(), this, "SelectionChanged(Int_t)");
-	
+
 }
 
 void TGMrbFileObjectCombo::Browse() {
@@ -145,9 +146,9 @@ void TGMrbFileObjectCombo::Browse() {
 // Purpose:        Message handler for browse button
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Handle message received from browse button
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	new TGFileDialog(fClient->GetRoot(), this, kFDOpen, &fFileInfo);
@@ -168,9 +169,9 @@ void TGMrbFileObjectCombo::EntryChanged() {
 // Purpose:        Message handler for return/tab
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Handle message received from browse button
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	TString fName;
@@ -189,11 +190,11 @@ void TGMrbFileObjectCombo::SetFileEntry(const Char_t * FileName) {
 // Name:           TGMrbFileObjectCombo::SetFileEntry
 // Purpose:        Fill text entry with file name
 // Arguments:      Char_t * FileName     -- file name to be filled in
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Inserts file name with respect to path spec in
 //                 fFileInfo.fIniDir.
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	TMrbSystem ux;
@@ -209,10 +210,10 @@ const Char_t * TGMrbFileObjectCombo::GetFileEntry(TString & FileName, Bool_t Ful
 // Name:           TGMrbFileObjectCombo::GetFileEntry
 // Purpose:        Return file name
 // Arguments:      Bool_t FullPath  -- return full path
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Returns entry text prepended by fFileInfo.fIniDir if needed.
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	FileName = fEntry->GetText();
@@ -232,9 +233,9 @@ Int_t TGMrbFileObjectCombo::GetSelectionAsString(TString & SelItem, Bool_t FullP
 // Arguments:      TString SelItem         -- where to store selection data
 //                 Bool_t FullPath         -- prepend full file path if kTRUE
 // Results:        Int_t NofItems          -- number of selected items (+1 for filename)
-// Exceptions:     
+// Exceptions:
 // Description:    Returns selected item as string: "file:object"
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	SelItem = "";
@@ -253,7 +254,7 @@ Int_t TGMrbFileObjectCombo::GetSelectionAsString(TString & SelItem, Bool_t FullP
 		item = item.Strip(TString::kBoth);
 		if (item.IsNull()) return(1);
 		SelItem += ":";
-		SelItem += item; 
+		SelItem += item;
 		return(2);
 	}
 	return(0);
@@ -267,9 +268,9 @@ Int_t TGMrbFileObjectCombo::GetSelection(TObjArray & SelArr, Bool_t FullPath) co
 // Arguments:      TObjArray SelArr        -- where to store selection data
 //                 Bool_t FullPath         -- prepend full file path if kTRUE
 // Results:        Int_t NofItems          -- number of selected items (0/1)
-// Exceptions:     
+// Exceptions:
 // Description:    Returns selected item as TObjArray
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	SelArr.Delete();
@@ -298,10 +299,10 @@ void TGMrbFileObjectCombo::SetSelectionFromString(TString & SelString, Bool_t Is
 // Purpose:        Fill file entry and listbox from array
 // Arguments:      TString & SelString     -- string containing file name and file items
 //                 Bool_t IsNewFile        -- open new file anyway
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Inserts file name into file entry and file items into listbox.
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	this->ClearList();
@@ -325,10 +326,10 @@ void TGMrbFileObjectCombo::SetSelection(TObjArray & SelArr, Bool_t IsNewFile) {
 // Purpose:        Fill file entry and listbox from array
 // Arguments:      TObjArray & SelArr     -- array containing file name and file items
 //                 Bool_t IsNewFile        -- open new file anyway
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Inserts file name into file entry and file items into listbox.
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	this->ClearList();
@@ -353,7 +354,7 @@ Bool_t TGMrbFileObjectCombo::OpenFile(const Char_t * FileName) {
 // Arguments:      Char_t * FileName  -- file name
 // Results:        kTRUE/kFALSE
 // Description:    Open file given by selection
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	TFile * rootFile = new TFile(FileName);
@@ -402,9 +403,9 @@ void TGMrbFileObjectCombo::FileChanged(Int_t FrameId, Int_t Selection) {
 // Arguments:      Int_t FrameId    -- frame id
 //                 Int_t Selection  -- selection index
 // Results:        --
-// Exceptions:     
-// Description:    Emits signal on "file selection changed" 
-// Keywords:       
+// Exceptions:
+// Description:    Emits signal on "file selection changed"
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
    Long_t args[2];
@@ -423,9 +424,9 @@ void TGMrbFileObjectCombo::SelectionChanged(Int_t FrameId, Int_t Selection) {
 // Arguments:      Int_t FrameId    -- frame id
 //                 Int_t Selection  -- selection index
 // Results:        --
-// Exceptions:     
-// Description:    Emits signal on "object selection changed" 
-// Keywords:       
+// Exceptions:
+// Description:    Emits signal on "object selection changed"
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
    Long_t args[2];
@@ -502,15 +503,15 @@ TGMrbFileObjectListBox::TGMrbFileObjectListBox(const TGWindow * Parent,
 	fEC = new TGVerticalFrame(this, ListBoxWidth, Height, kChildFrame, FrameGC->BG());
 	fHeap.AddFirst((TObject *) fEC);
 	this->AddFrame(fEC, frameLayout);
-		
+
 	fEB1 = new TGHorizontalFrame(fEC, ListBoxWidth, Height, kChildFrame, FrameGC->BG());
 	fHeap.AddFirst((TObject *) fEB1);
 	fEC->AddFrame(fEB1, frameLayout);
-		
+
 	fEB2 = new TGHorizontalFrame(fEC, ListBoxWidth, Height, kChildFrame, FrameGC->BG());
 	fHeap.AddFirst((TObject *) fEB2);
 	fEC->AddFrame(fEB2, frameLayout);
-		
+
 	TGLayoutHints * btnLayout = new TGLayoutHints(kLHintsRight | kLHintsCenterY, 0, 0, 0, 0);
 	fHeap.AddFirst((TObject *) btnLayout);
 	fBrowse = new TGPictureButton(fEB1, fClient->GetPicture("ofolder_t.xpm"), kBtnBrowse);
@@ -530,7 +531,7 @@ TGMrbFileObjectListBox::TGMrbFileObjectListBox(const TGWindow * Parent,
 	fHeap.AddFirst((TObject *) fEntry);
 	fEB1->AddFrame(fEntry, EntryGC->LH());
 	fEntry->Resize(EntryWidth - bSize, Height);
-	
+
 	TGLayoutHints * rbLayout = new TGLayoutHints(kLHintsLeft | kLHintsCenterY, 10, 10, 0, 0);
 	fHeap.AddFirst((TObject *) rbLayout);
 	fRBSingle = new TGRadioButton(fEB2, "single", kBtnSingle);
@@ -579,9 +580,9 @@ void TGMrbFileObjectListBox::Browse() {
 // Purpose:        Slot method
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Called upon Clicked() events
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	new TGFileDialog(fClient->GetRoot(), this, kFDOpen, &fFileInfo);
@@ -597,9 +598,9 @@ void TGMrbFileObjectListBox::Clear() {
 // Purpose:        Slot method
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Called upon Clicked() events
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	this->ClearList();
@@ -620,9 +621,9 @@ void TGMrbFileObjectListBox::Apply() {
 // Purpose:        Slot method
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Called upon Clicked() events
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	TList selected;
@@ -654,9 +655,9 @@ void TGMrbFileObjectListBox::Single() {
 // Purpose:        Slot method
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Called upon Clicked() events
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	fRBSingle->SetState(kButtonDown);
@@ -670,9 +671,9 @@ void TGMrbFileObjectListBox::Range() {
 // Purpose:        Slot method
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Called upon Clicked() events
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	fRBRange->SetState(kButtonDown);
@@ -686,9 +687,9 @@ void TGMrbFileObjectListBox::ListBoxChanged(Int_t Selected) {
 // Purpose:        Slot method
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Called upon SelectionChanged() events
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	if (fRBRange->GetState() == kButtonDown) {
@@ -712,9 +713,9 @@ void TGMrbFileObjectListBox::EntryChanged() {
 // Purpose:        Message handler for return/tab
 // Arguments:      --
 // Results:        --
-// Exceptions:     
+// Exceptions:
 // Description:    Handle message received from browse button
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	TString fName;
@@ -728,10 +729,10 @@ void TGMrbFileObjectListBox::SetList(TObjArray & LofEntries) {
 // Name:           TGMrbFileObjectListBox::SetList
 // Purpose:        Set list entries
 // Arguments:      TObjArray & LofEntries  -- list of entries
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Inserts names into list
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 #if ROOT_VERSION_CODE >= ROOT_VERSION(5,10,0)
@@ -756,11 +757,11 @@ void TGMrbFileObjectListBox::SetFileEntry(const Char_t * FileName) {
 // Name:           TGMrbFileObjectListBox::SetFileEntry
 // Purpose:        Fill text entry with file name
 // Arguments:      Char_t * FileName     -- file name to be filled in
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Inserts file name with respect to path spec in
 //                 fFileInfo.fIniDir.
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	TMrbSystem ux;
@@ -776,10 +777,10 @@ const Char_t * TGMrbFileObjectListBox::GetFileEntry(TString & FileName, Bool_t F
 // Name:           TGMrbFileObjectListBox::GetFileEntry
 // Purpose:        Return file name
 // Arguments:      Bool_t FullPath  -- return full path
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Returns entry text prepended by fFileInfo.fIniDir if needed.
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	FileName = fEntry->GetText();
@@ -801,9 +802,9 @@ Int_t TGMrbFileObjectListBox::GetSelectionAsString(TString & SelString, Bool_t F
 // Arguments:      TString SelString       -- where to store selection data
 //                 Bool_t FullPath         -- prepend full file path if kTRUE
 // Results:        Int_t NofItems          -- number of selected items (+1 for filename)
-// Exceptions:     
+// Exceptions:
 // Description:    Returns selected item "file:obj1:obj2:...:objN"
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	SelString = "";
@@ -831,7 +832,7 @@ Int_t TGMrbFileObjectListBox::GetSelectionAsString(TString & SelString, Bool_t F
 				SelString += item;
 				nofSelected++;
 			}
-		} 
+		}
 	}
 	return(nofSelected);
 }
@@ -844,9 +845,9 @@ Int_t TGMrbFileObjectListBox::GetSelection(TObjArray & SelArr, Bool_t FullPath) 
 // Arguments:      TString SelItem         -- where to store selection data
 //                 Bool_t FullPath         -- prepend full file path if kTRUE
 // Results:        Int_t NofItems          -- number of selected items
-// Exceptions:     
+// Exceptions:
 // Description:    Returns selected item as TObjArray
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	SelArr.Delete();
@@ -874,7 +875,7 @@ Int_t TGMrbFileObjectListBox::GetSelection(TObjArray & SelArr, Bool_t FullPath) 
 				SelArr.Add(new TObjString(item.Data()));
 				nofSelected++;
 			}
-		} 
+		}
 	}
 	return(nofSelected);
 }
@@ -886,10 +887,10 @@ void TGMrbFileObjectListBox::SetSelectionFromString(TString & SelString, Bool_t 
 // Purpose:        Fill file entry and listbox from array
 // Arguments:      TString & SelString     -- string containing file name and file items
 //                 Bool_t IsNewFile        -- open new file anyway
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Inserts file name into file entry and file items into listbox.
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	this->ClearList();
@@ -916,10 +917,10 @@ void TGMrbFileObjectListBox::SetSelection(TObjArray & SelArr, Bool_t IsNewFile) 
 // Purpose:        Fill file entry and listbox from array
 // Arguments:      TObjArray & SelArr     -- array containing file name and file items
 //                 Bool_t IsNewFile        -- open new file anyway
-// Results:        
-// Exceptions:     
+// Results:
+// Exceptions:
 // Description:    Inserts file name into file entry and file items into listbox.
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	this->ClearList();
@@ -945,7 +946,7 @@ Bool_t TGMrbFileObjectListBox::OpenFile(const Char_t * FileName) {
 // Arguments:      Char_t * FileName  -- file name
 // Results:        kTRUE/kFALSE
 // Description:    Open file given by selection
-// Keywords:       
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
 	TFile * rootFile = new TFile(FileName);
@@ -998,9 +999,9 @@ void TGMrbFileObjectListBox::FileChanged(Int_t FrameId, Int_t Selection) {
 // Arguments:      Int_t FrameId    -- frame id
 //                 Int_t Selection  -- selection index
 // Results:        --
-// Exceptions:     
-// Description:    Emits signal on "file selection changed" 
-// Keywords:       
+// Exceptions:
+// Description:    Emits signal on "file selection changed"
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
    Long_t args[2];
@@ -1019,9 +1020,9 @@ void TGMrbFileObjectListBox::SelectionChanged(Int_t FrameId, Int_t Selection) {
 // Arguments:      Int_t FrameId    -- frame id
 //                 Int_t Selection  -- selection index
 // Results:        --
-// Exceptions:     
-// Description:    Emits signal on "object selection changed" 
-// Keywords:       
+// Exceptions:
+// Description:    Emits signal on "object selection changed"
+// Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
    Long_t args[2];

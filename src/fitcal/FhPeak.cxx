@@ -1,5 +1,5 @@
 #include "FhPeak.h"
-ClassImp(FhPeak)
+//ClassImp(FhPeak)
 
 FhPeak::FhPeak(Double_t pos) : fEstimate(pos), fMean(pos){
    fNominalEnergy = 0;

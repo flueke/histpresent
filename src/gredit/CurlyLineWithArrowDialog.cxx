@@ -13,7 +13,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-ClassImp(CurlyLineWithArrowDialog)
+//ClassImp(CurlyLineWithArrowDialog)
 
 CurlyLineWithArrowDialog::CurlyLineWithArrowDialog()
 {

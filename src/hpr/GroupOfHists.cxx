@@ -17,8 +17,8 @@
 #include "WindowSizeDialog.h"
 #include "GeneralAttDialog.h"
 
-ClassImp (GoHTimer)
-ClassImp (GroupOfHists)
+//ClassImp (GoHTimer)
+//ClassImp (GroupOfHists)
 
 GoHTimer::GoHTimer(Long_t ms, Bool_t synch, GroupOfHists * goh):TTimer(ms,synch){
 	  cout << "init GoHTimer" << endl;

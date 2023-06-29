@@ -3,7 +3,7 @@ namespace std {} using namespace std;
 #include <iostream>
 #include "TEnv.h"
 #include "TableOfLabels.h"
-ClassImp(TableOfLabels)
+//ClassImp(TableOfLabels)
 TableOfLabels::TableOfLabels(const TGWindow *win, TString *title,
                                Int_t nc, Int_t nr, 
                                TOrdCollection *values, 

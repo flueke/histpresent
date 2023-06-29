@@ -4,7 +4,7 @@
 
 #include "HprImage.h"
 
-ClassImp(HprImage)
+//ClassImp(HprImage)
 //_________________________________________________________________________
 //
 // This class wraps a TImage object. It stores

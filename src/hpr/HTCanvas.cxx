@@ -12,7 +12,7 @@
 
 extern Int_t gHprDebug;
 
-ClassImp(HTCanvas)
+//ClassImp(HTCanvas)
 
 //____________________________________________________________________________
 HTCanvas::HTCanvas():GrCanvas()

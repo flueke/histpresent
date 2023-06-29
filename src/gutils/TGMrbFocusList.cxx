@@ -12,7 +12,7 @@
 
 #include "TGMrbFocusList.h"
 
-ClassImp(TGMrbFocusList)
+//ClassImp(TGMrbFocusList)
 
 void TGMrbFocusList::StartFocus(TGTextEntry * Entry) {
 //________________________________________________________________[C++ METHOD]

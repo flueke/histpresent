@@ -16,8 +16,8 @@
 using std::cout;
 using std::endl;
 
-ClassImp (CreateCDlabel)
-ClassImp (CDisc)
+//ClassImp (CreateCDlabel)
+//ClassImp (CDisc)
 
 CDisc::CDisc(Double_t x, Double_t y, Double_t r, Double_t ratio)
 {

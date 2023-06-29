@@ -34,7 +34,7 @@ namespace std {} using namespace std;
 
 #include "SetColor.h"
 
-ClassImp(TMrbSystem)
+//ClassImp(TMrbSystem)
 
 extern TMrbLogger * gMrbLog;			// access to message logging
 
@@ -326,7 +326,7 @@ Int_t TMrbSystem::GetType(const Char_t * Path) const {
 	FileStat_t stat;
 	TString path = gSystem->ExpandPathName(Path);
 		
-#if ROOTVERSION < 40104
+#if ROOT_VERSION_CODE < ROOT_VERSION(4, 1, 4)
 	struct stat sbuf;
 	if (lstat(path.Data(), &sbuf) == 0) {
 		stat.fIsLink = S_ISLNK(sbuf.st_mode);
