@@ -23,6 +23,7 @@ Requires ROOT-6.28 or later. Uses ROOTSYS to locate the ROOT installation.
 Authors
 -------
 R.Lutter, O.Schaile (LMU)
+
 F. Lüke <f.lueke@mesytec.com> (since '23)
 
 License
