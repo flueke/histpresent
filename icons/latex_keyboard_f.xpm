@@ -1,0 +1,27 @@
+/* XPM */
+static char *latex_keyboard[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 5 1",
+"  c black",
+". c #3F3F3F",
+"X c gray50",
+"o c gray75",
+"O c gray100",
+/* pixels */
+"OOoX..........XO",
+"OOOO.   oooX.  O",
+"OOOOX   OOOOOX O",
+"OOOOX   OOOOOO.O",
+"OOOOX   OOOXOOoO",
+"OOOOX   OOO.OOOO",
+"OOOOX   OOX OOOO",
+"OOOOX       OOOO",
+"OOOOX   Oo. OOOO",
+"OOOOX   OOO OOOO",
+"OOOOX   OOOXOOOO",
+"OOOOX   OOOoOOOO",
+"OOOOX   OOOOOOOO",
+"OOOOX   OOOOOOOO",
+"OOoX    .XOOOOOO",
+"OOOOOOOOOOOOOOOO"
+};
