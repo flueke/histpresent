@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>Operations on histgrams</TITLE> 
+
+<H3>Operate on selected histgrams</H3> 
+
+If two histograms (or more for Add) are selected one can
+perform the following operations:
+ 
++ Add: hist1 + factor*hist2
+- Sub: hist1 - factor*hist2
+* Mul: hist1 * factor*hist2
+* Div: hist1 / (factor*hist2)
+
+The resulting histograms are shown and stored in memory with
+new names. Note that in this case the order of selection is
+important.
+
+If only 1 histogram is selected with operation multiply then
+this gets scaled
+
+For operation Add any number of selections are possible.
+
+Rebin a selected histogram using the selected (green) value.
+The new bin content may the sum or average of the original
+bins
+</HTML>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>How to use the Attribute Macro</TITLE>
+<H3>Use of Attributes Macro</H3>
+A root macro FH_defaults.C can be used to customize the
+attributes of a histogram and canvas. If existing it is
+called right before the picture is painted. The macro is called
+with the histogram and canvas name. In this way it possible
+to set parameters like ranges lin-log scale, fill colors
+etc. depending on the name of a histogram. If FH_defaults.C
+does not exist yet a template is provided.
+
+This can also be used to get and superimpose other
+histograms, please read the provided template FH_defaults.C
+for more information.
+
+Execution of this macro may be switched on an off from
+the <a href=options.html>Options popup menu</a>
+
+If activated attributes set in this macro will overwrite the
+one defined in the <a href=options.html> options popup menu</a>.
+</HTML>

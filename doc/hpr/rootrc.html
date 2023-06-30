@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>What is .rootrc good for?</TITLE>
+<h3>The .rootrc file</h3>
+In this file ROOT and applications using ROOT remember
+various default settings. It normally resides in the
+users home directory and the resources stored here
+are valid for all sessions of HistPresent. 
+Among others the following resources can be added to 
+this file. 
+<pre>
+HistPresent.HelpDir:				  $(MARABOU)/doc/html/hpr
+HistPresent.WorkFileName:       q3dparams.root
+HistPresent.PrintCommand:       lpr -Paul
+HistPresent.LastSettingsName:   defaults/Last
+</pre>
+
+In addition parameters set from the various
+<a href=#options.html>options menus</a> are remembered in this file.
+<p>
+Apropos LastSettingsName:<br>
+If the path LastSettingsName is defined ranges and scales
+(lin - log) of histograms are remembered during and between
+sessions in files with names defaults/Last_histname.def.  It
+is convenient to use an own subdirectory  (in this example
+$CWD/defaults) for this. LastSettingsName may be any legal
+pathname e.g. /tmp/$(USER)/ Note:  Use $(USER) instead of just
+$USER for compatibility reasons.
+</html>

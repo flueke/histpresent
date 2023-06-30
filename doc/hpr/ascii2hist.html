@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>Convert ASCII data to histgrams / graphs</TITLE>
+<H3>ASCII to histograms</H3>
+The following input formats are handled to convert 
+data given as numbers (double) in a plain ASCII file 
+to a histogram:
+<ul>
+<li>
+<B>Channel contents </B><p>
+In this case the N values in the ASCII file are assumed
+to be the contents of the 1 - N channels of the spectrum.<br>
+A histogram with N bins, low egde 0, upper edge (double)N
+is created.
+</li>
+<li>
+<B>Channel contents, Errors </B><p>
+Same as above, the second value is the bin error. 
+</li>
+<li>
+<B>X values of histogram </b><p>
+
+A histogram is created and incremented at X with weight 1
+
+</li>
+<li>
+<B>X values, weights</b><p>
+
+Same as above, the histogram incremented at X with 
+weight . 
+</li>
+<li>
+<B>X-, Y-values of 2dim histogram  </b><p>
+
+A 2-dim histogram is created and incremented at X, Y 
+with weight 1
+
+</li>
+<li>
+<B>X-, Y-values, weights of 2dim histogram  </b><p>
+
+A 2-dim histogram is created and incremented at X, Y 
+with weight.
+</li>
+</ul>
+<p>
+In all cases (hopefully) reasonable defaults are provided
+for the histogram parameters. 
+
+<H3>ASCII to graphs</H3>
+
+The following input formats are handled to convert 
+data given as numbers (double) in a plain ASCII file 
+to a TGraph or TGraphErrors:
+<ul>
+<li>
+<B>X, Y of TGraph (without errors)</B><p>
+
+A TGraph with X, Y values is created.
+</li>
+<li>
+<B>X, Y, ErrorX, ErrorY of TGraphErrors</B><p>
+
+A TGraphError with X, Y, ErrorX, ErrorY values is 
+created.
+</li>
+<li>
+<B>X, Y, ErrorXlow, ErrorXhigh, ErrorYlow , ErrorYhigh 
+of TGraphAsymmErrors</B><p>
+</li>
+</ul>
+
+A TGraphAsymmErrors with X, Y, ErrorX, ErrorY values is 
+created.
+
+Graphs may be drawn in the same window. To use this 
+feature use the file popup menu of the canvas into
+which the graph should go and select the option:
+<b>Draw in same window</b>
+
+</PRE>
+</HTML>

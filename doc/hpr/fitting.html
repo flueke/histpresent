@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>Howto to do Fitting</TITLE>
+<H3>Fitting of functions to 1 and 2-dimensional histograms</H3>
+HistPresent supports two possibilities to fit functions
+to a 1-dim histogram: <a href=#Help_on_Fit_2dim> (2-dim see here)</a>
+<p>
+<ul>
+<li>
+Fit of predefined functions from a <a href=#Help_on_Fit_1dim_Menu>Popup Menu</a>.<br>
+</li>
+<li>
+User defined function with the help of a <a href=#Help_on_Fit_1dim_Macro>macro</a>.<br>
+</li>
+
+<a NAME=Help_on_Fit_1dim_Menu></a>
+<H3>Fitting of functions to 1-dim histograms</H3>
+From the <b>Fit/Calib/FFT</b> popup menu:
+<b>Gaussians with <a href=#Help_on_Tail>tail</a></b>
+<b>Exponential function</b>
+<b>Polynomial</b>
+<b>User formula</b>
+
+Each of the widgets provides an own <b>Help button</b>.
+<p>
+Marks are used to provide lower and upper limits of the
+fitting region.
+In case of gaussians with more than 1 peak in addition
+the estimated positions of the peaks must be marked.
+Marks are set by pressing the middle mouse button.
+<p>
+The program estimates from this the start
+parameters of the fit which are presented and may be
+changed. Values may be fixed and bound.<B> When using
+bounds please be aware of the warnings in the MINUIT
+manual on this.</B> Fitted parameters may be kept as
+start for a new fit. As default Minos error analysis
+is not done but may be switched on.
+<p>
+The quality of the start parameters of a fit determine
+the speed of convergence. Bad start parameters may lead
+MINUIT to find an unwanted minimum. Start parameters
+may be checked by drawing the fit function with these 
+parameters without actually doing a fit.
+<p>
+
+
+<a NAME=Help_on_Fit_1dim_Macro></a>
+<H3>Fitting of 1-dim functions by a macro</H3>
+by a user provided macro.
+
+A more general way of fitting is to edit a macro where all
+the functionality provided by the TFormula class may be
+used. Template macros serving as examples are provided to
+start with. This macro contains  2 possibilities to provide
+the fit function: as formula or as normal C++ function.
+<p>
+Currently 4 examples are provided: An exponential + a
+gaussian, 2 gaussians with common mean, a Breit Wigner and
+3 Landau functions.
+<p>
+Use the command <b>Edit User Fit Macro</b> to edit the macro. If
+the macro given by the name exists this is taken otherwise
+a choice menu with the above 4 examples is presented.
+Meaningful start values should be given to assure that
+MINUIT finds the correct minimum.
+<p>
+In this case drawing of components of the fit function must
+be done in the macro itself.
+
+<a NAME=Help_on_Tail></a>
+<H3>Tail function</H3>
+A simplified tail function as described in 
+NIM 137 (1976) p. 525-536 has been implemented.
+The attached picture illustrates this 
+<img SRC="Help_tail.canvas.gif"  
+height=400 width=800 align=ABSCENTER>
+..
+<a NAME=Help_on_ShowFitted></a>
+<H3>Option: Visualize fit results</H3>
+Display fitted curves
+This option controls which curves are drawn if a function
+is fitted to a 1_dim histogram. 
+(see <a href=#fitting.html>Help_on_Fit_1dim_Menu)</a>
+This function is normally is a sum of several components
+(Gauss, linear background). As default only the sum of 
+the components are drawn. If this option is active all
+components are shown allowing a better visual control of 
+the fit. An example is given in the attached picture
+<img SRC="Fitted_Curves.canvas.gif"  height=400 width=600 align=ABSCENTER>
+</HTML>
+
+<a NAME=Help_on_Fit_2dim></a>
+<H3>Fitting with to 2-dim histograms</H3>
+2-dim functions can be fitted to a 2-dim histogram with
+the help of a user provided macro. 
+Use the command <b>Edit User Fit Macro</b> to edit the macro.
+If the file doesnt exist a template implementing a 
+2-dim gauss function is provided. The result of the
+fit is drawn in a separate canvas with the same drawing 
+options as used for the 2-dim histogram.
+<p>
+1-dim polynomials can be fitted in a 2-dim histogram
+either to user defined marks or to a profile histogram
+projected onto the X-axis with a possible active graphical 
+cut applied.
+<p>
+Functions are named. They may be written on a root file and
+retrieved using their names. Parameters, errors etc. may be
+made persistent and reused in analysis programs e.g. as
+calibration.
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>File popup in HistPresents startup window</TITLE>
+<PRE>
+
+<H3>Select ROOT file from any dir</H3>
+Normally HistPresent looks for ROOT files in the current
+UNIX directory. This command presents a file browser to
+open a file in any directory.
+
+<H3>ASCII data from file to Ntuple</H3>
+Fill a ntuple with values in normal text files (tables).
+
+<H3>ASCII data from file to histogram</H3>
+Fill a histogram with values in normal text files (tables).
+One-, two-, three-dimensional histograms are supported,
+optionally with error.
+
+<H3>ASCII data from file to graph</H3>
+Fill a graph with values in normal text files (tables).
+Various selection options are available:
+Simple x,y, with/without (assymetric) errors, seleted
+columns of a table.
+
+<H3>Create empty histogram</H3>
+Create a histogram to be used either:
+- to insert a user defined function
+- to be used as a histogram for a graph, if the 
+  automatically created histogram doesnt meet the 
+  users need.
+  if the option: <b>Use for graph</b> is activated 
+  the histogram is used and consumed by next graph
+  displayed.
+  
+<H3>Read Cuts (Window2D) from ASCII file</H3>
+Read 2-dim window/cut from plain file with format:
+cut_name
+n    (number of points)
+x1 y1
+x2 y2
+..
+xn yn
+
+<H3>Open Edit canvas (A4 portrait)</H3>
+This invokes the builtin graphical editor.
+<H3></H3>
+
+</PRE>
+</HTML>

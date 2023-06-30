@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>How to calibrate a 1-dim histogram</TITLE>
+<axx NAME=Help_on_Calibration></a>
+<H3>Calibrate x-scale of 1-dim histogram</H3>
+The X-scale of of a 1-dim histogram may be recalibrated
+providing x-y-points. 
+
+<h2>This refers to new version ( >= root_v5.14/00):</h2>
+
+The procedure to use previously fitted peaks is as follows:
+<UL>
+<LI><P>
+Use the <b>Fit Gaussian (with tail)</b> dialog to perform 
+the required fits (Activate the Option </b>Add all functions
+<b>Note:</b> This may be done via the <b>FindPeak Dialog</b>
+with subsequent <b>Fit Gaussian Dialog</b>
+</LI><P><LI>
+If this is done before the <b>CalibrationDialog</b> is invoked,
+the table in  the <b>CalibrationDialog</b> will have as many
+rows as peaks are defined. The default number is 3
+</LI><P><LI>
+Invoke this widget (<b>CalibrationDialog</b>) 
+Execute (Click) <b>Update Peaklist</b>
+</LI><P><LI>
+Fields <b>Mean</b> and <b>Errors</b> of the table should now
+be filled. Complete / modify the table at least  with
+<b>Nom Val</b> (Nominal values)
+</LI><P><LI>
+The assignment of measured peaks to calibration values may
+be done automatically. HistPresent knows the parameters of
+the the following radiactive sources: 152Eu, 60Co, 88Y,
+user defined values may be given in a file. For more info
+consult the Help item in the CalibrationDialog widget.
+</LI><P><LI>
+Execute <b>Calculate Function</b>, the function is drawn
+in a seperate canvas.
+</LI><P><LI>
+If the result is reasonable possibly modify the parameters
+for the <b>Calibrated Hist</b>
+</LI><P><LI>
+Execute <b>Fill Hist</b>. A new histogram will be created
+and filled according to the calibration function.
+Note: Each entry in the original histogram is randomly 
+      shifted within its bin before the calibration is
+      applied to avoid binning effects.
+</LI>
+</UL>
+- The Calibration function may be any legal <b>TFormula</b>
+  in practice polynomials of 1. or 2. degree (pol1, pol2)
+  are used
+- Calibration functions may be saved to and restored from
+  a root file.
+</HTML>

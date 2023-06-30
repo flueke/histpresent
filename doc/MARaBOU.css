@@ -1,0 +1,235 @@
+a {
+	text-decoration: none;
+	font-weight: bolder;
+}
+a:link {
+	color: #0000ff;
+	text-decoration: none;
+}
+a:visited {
+	color: #5500cc;
+}
+a:active {
+	color: #551a8b;
+	border: dotted 1px #0000ff;
+}
+a:hover {
+	background: #eeeeff;
+}
+
+#indx {
+	list-style:	none;
+	padding-left: 0em;
+	margin-left:	0em;
+}
+#indx li {
+	margin-top:	 1px;
+	margin-bottom: 1px;
+	margin-left:	0px;
+	padding-left:	2em;
+	padding-bottom: 0.3em;
+	border-top:	 0px hidden #afafaf;
+	border-left:	0px hidden #afafaf;
+	border-bottom: 1px hidden #ffffff;
+	border-right:	1px hidden #ffffff;
+}
+#indx li:hover {
+	border-top:	 1px solid #afafaf;
+	border-left:	1px solid #afafaf;
+	border-bottom: 0px solid #ffffff;
+	border-right:	0px solid #ffffff;
+}
+#indx li.idxl0 {
+	background-color: #e7e7ff;
+}
+#indx a {
+	font-weight: bold;
+	display:		block;
+	margin-left: -1em;
+}
+#indxShortX {
+	border: 3px solid gray;
+	padding: 8pt;
+	margin-left: 2em;
+}
+#indxShortX h4 {
+	margin-top: 0em;
+	margin-bottom: 0.5em;
+}
+#indxShortX a {
+	margin-right: 0.25em;
+	margin-left: 0.25em;
+}
+#indxModules {
+	border: 3px solid gray;
+	padding: 8pt;
+	margin-left: 2em;
+}
+#indxModules h4 {
+	margin-top: 0em;
+	margin-bottom: 0.5em;
+}
+#indxModules a {
+	margin-right: 0.25em;
+	margin-left: 0.25em;
+}
+#searchform {
+	margin-left: 2em;
+}
+
+div.funcdoc {
+   width: 97%;
+   border-bottom: solid 3px #cccccc;
+   border-left: solid 1px #cccccc;
+   margin-bottom: 1em;
+   margin-left: 0.3em;
+   padding-left: 1em;
+   background-color: White;
+}
+span.funcname {
+   margin-left: -0.7em;
+   font-weight: bolder;
+}
+span.comment {
+   background-color: #eeeeee;
+   color: Green;
+   font-weight: normal;
+}
+span.keyword {
+   color: Black;
+   font-weight: normal;
+}
+span.cpp {
+	 color: Gray;
+   font-weight: normal;
+}
+span.string {
+	 color: Teal;
+   font-weight: normal;
+}
+pre.code {
+   font-weight: bolder;
+}
+div.classdescr {
+	width: 97%;
+	margin-left: 0.3em;
+	padding-left: 1em;
+	margin-bottom: 2em;
+    border-bottom: solid 3px #cccccc;
+    border-left: solid 1px #cccccc;
+    background-color: White;
+}
+div.inlinecode {
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+}
+code.inlinecode {
+	padding: 0.5em;
+	border: solid 1px #ffff77;
+   background-color: #ffffdd;
+}
+body {
+	background-color: #fcfcfc;
+}
+table.inhtree {
+   background-color: White;
+   border: solid 1px Black;
+   width: 97%;
+}
+table.libinfo {
+   background-color: White;
+   padding: 2px;
+   border: solid 1px Gray; 
+   float: right;
+}
+#functions {
+   margin-top: 4em;
+   background-color: White;
+}
+#datamembers {
+   margin-top: 4em;
+   background-color: White;
+}
+div.access {
+   border-left: solid 3pt black;
+   padding-left: 1em;
+   margin-left: 1em;
+   margin-bottom: 1em;
+}
+#funcpubl {
+   border-left-color: #77ff77;
+}
+#funcprot {
+   border-left-color: #ffff00;
+}
+#funcpriv {
+   border-left-color: #ff7777;
+}
+#datapubl {
+   border-left-color: #77ff77;
+}
+#dataprot {
+   border-left-color: #ffff00;
+}
+#datapriv {
+   border-left-color: #ff7777;
+}
+#enumpubl {
+   border-left-color: #77ff77;
+}
+#enumprot {
+   border-left-color: #ffff00;
+}
+#enumpriv {
+   border-left-color: #ff7777;
+}
+tr.func {
+   white-space: nowrap;
+}
+tr.data {
+   white-space: nowrap;
+}
+tr.funcinh {
+   display: none;
+   white-space: nowrap;
+}
+tr.datainh {
+   display: none;
+   white-space: nowrap;
+}
+span.baseclass {
+   font-size:x-small;
+}
+td.funcret {
+   float: right;
+   padding-right: 0.5em;
+}
+td.funcname {
+   font-weight: bolder;
+   white-space: normal;
+   text-indent: -2em;
+   padding-left: 2em;
+}
+td.datatype {
+   float: right;
+   padding-right: 0.5em;
+}
+td.dataname {
+   font-weight: bolder;
+   vertical-align: top;
+}
+td.datadesc {
+   font-style: italic;
+   padding-left: 0.5em;
+   white-space: normal;
+}
+#dispopt {
+   background-color: White;
+   padding: 2px;
+   border: solid 1px Gray; 
+   float: right;
+   position: relative;
+   top: -5em;
+   z-index: 2;
+}
+

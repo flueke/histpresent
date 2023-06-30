@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>Viewing ROOT trees, Ntuples</TITLE>
+<LI>Help on <a href=#Help_on_DisplayTree>Display a ROOT tree</a>
+<LI>Help on <a href=#Help_on_MakeCode>Use of a ROOT macro</a>
+
+<a NAME=Help_on_DisplayTree></a>
+<H3>Display / Browse a ROOT tree </H3>
+
+Some simple tools are provided to histogram the variables
+contained in a root tree (in the simplest case just a
+Ntuple).
+<b>Note: If a leaf is a vector with variable length the browser
+         can only show the (1dim) histogram of all entries.
+         This situation is marked with a v after the leafname.</b>
+Clicking on a tree produces a list showing the
+variables (leafs) of the tree. Just clicking into a name displays a
+1-dim histogram with default binning (100), the range is
+calculated from the first few 1000 values. A table is
+presented with default Nbin, LowX UpperX which may be edited.
+These defaults can be saved for the same or a later session
+activating the option
+<a href=options.html#Help_on_RemParTrees>Remember hist limits when showing trees</a>
+from the <a href=options.html>Various HistPresent options</a> pupup menu.
+<p>
+A scatter plot is produced by selecting 2 variables by
+pressing the grey button left of the name (which turns into
+green) and then clicking <b>Show leaves</b>. Pressing the green
+button deselects it.
+<p>
+To display not just the value itself but an expression of it
+press Edit expression. An expression can contain the
+variables names explicitly (e.g. TMath::Sqrt(var1))
+Tab completion is implemented for variables of the
+Ntuple and some frequently used TMath:: expression
+like TMath::Sqrt(
+<br>
+The name can also be taken from a selection. 
+This is done by putting $1 as a placeholder. 
+(e.g. Defining an expression: $1&&0xfff and then
+clicking on a variables name will select only the lower 12
+bit of the variables value. For 2-dim hists expressions like
+sqrt($1):$2&&0xfff may be used. Similiarly formula cuts may
+be applied by <b>Edit formula cut</b>. (e.g. $1 > 1000 & $2 > 2000).
+Applying graphical cuts (TCutG) are possible by giving the
+name of a memory resident TCutG and the 2 variables names
+used for the cut. 
+<p>
+The command <b>C++ Code, MakeClass</b> generates a skeleton
+analysis C++ code which is described <a href=#Help_on_MakeCode>Help_on_MakeCode</a>
+
+<a NAME=Help_on_MakeCode></a>
+<H3>Use of a root macro</H3>
+
+A simple and powerful way to analyze data contained in a tree
+is achieved with the help of a ROOT macro. A skeleton code is
+generated with the MakeClass method of the tree class. The
+following interactive session demonstrates this:
+
+<pre>
+root [0] TFile f("hsimple.root")
+root [1] f.ls()
+TFile**         hsimple.root    Demo ROOT file with histograms
+ TFile*         hsimple.root    Demo ROOT file with histograms
+  KEY: TH3F     hpx;1   This is the px distribution
+  KEY: TH2F     hpxpy;1 py vs px
+  KEY: TProfile hprof;1 Profile of pz versus px
+  KEY: TNtuple  ntuple;1        Demo ntuple
+root [2] ntuple->MakeClass();
+Info in TTreePlayer::MakeClass: 
+Files: ntuple.h and ntuple.C generated from TTree: ntuple
+root [3]
+</pre> 
+ntuple.h and  ntuple.C will now contain the skeleton C++  code.
+
+Detailed information can be found in the class descriptions
+of TTree and TCutG in ROOTs WWW site, the ROOT HOWTOS
+contain useful examples.
+
+</HTML>

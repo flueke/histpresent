@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>Usage of the mouse (pointer)</TITLE>
+
+<H3>Usage of the mouse (pointer)</H3>
+In general mouse button 2 (middle) is used to set  
+<a href=display.html#Help_on_Mark>marks</a> used in fitting and window setting operations.
+Button 3 (right) triggers a popup menu provided by the selected 
+object.
+Actions triggered by mouse button 1 (left) depend on the object
+below the pointer:
+<UL>
+<LI>If it points to a command button obviously the command is 
+executed if it points to a name in a Filelist a list of contents 
+will be presented etc.
+</LI>
+<LI>If the pointer is inside the frame of a histogram pressing and
+dragging button 1 will popup a window showing  bin-numbers,
+x -y values and content of the current bin and the integral
+in the dragged region.
+Optionally a fit of Gaussian plus a linear background is done
+in real time when moving the mouse. This option can be switched
+on and off from the <a href=options.html>option</a> item: 
+<B>How to display a 1-dim histogram</B> or  <B>How to display 
+a 2-dim histogram</B>
+This feature may also temporarily switch off and on for the 
+current canvas from the <B>ROOT-Options</B> popup item 
+<b>Pad Auto Exec</B> 
+</LI>
+<LI>If the pointer is inside the X- Y- or Z-scale of a histogram 
+pressing button 1 and dragging will zoom into the dragged region. 
+Unzoom may be done invoking the popup menu by button 3.
+</LI>
+<LI>If the pointer is inside the statistics box its content is 
+printed to the transcript window.
+</LI>
+<LI>If the pointer is inside a canvas with several histograms the
+selected histogram is shown in a separate window. 
+This is described in more detail <a href=showlists.html#Help_on_ShowSelected>here</a>
+</LI>
+</HTML>
+

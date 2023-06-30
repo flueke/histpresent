@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>Howto use the HelpBrowser</TITLE>
+<PRE>
+<H3>Howto use the HelpBrowser</H3>
+
+This class implements a simple HelpBrowser typically used in an.q
+interactive application where a standard browser like Netscape
+appears to be too clumpsy and takes away too much resources
+especially space on the screen. It does n o t support internet
+references (e.g. http:) but only file refs. It does n o t
+support display of the Web documentation of ROOT.
+
+It accepts input in HTML format but does not recognize all
+possible tags.  currently only the following tags are recognized
+(others are just ignored):
+
+[Hn]  					Heading i.e. highlight line 
+[B],[I] 				   bold, italic 
+[a NAME=xxx][/a]     an anchor
+[a href=yyy]text[/a] 	a reference (may not be http:) 
+[img SRC=pict.canvas.gif]  insert a gif picture
+
+The constructor is normally called with the name of a directory
+containing  html-files to be included into the documention.  NB:
+A file index.html containing the entry level hrefs should be
+part of this directory. If the complete documentation is in one
+htmlfile the name of this file may be given instead. Also a
+ROOT-file containing ready made documentation can be given (see
+method ToRootFile below); More files / directories may be added
+using the method: AddHtml
+
+It chops text between anchors  into help items.  Text before the
+the first anchor gets the name of the the file as name of the
+help item. This is useful to construct an index which works also
+for a normal browser like netscape. If a reference is clicked on
+only the text for this item is displayed.  The window size is
+adjusted to the number of lines. It is assumed that the help
+text is preformatted, so no formatting is done except optionally
+breaking lines at fMaxLineLength. A possible image is displayed
+in a separate window.
+
+To display the helptext the method: DrawText(anchor_name, xpos,
+ypos) should be used. When help items should be added to a popup
+menu the method DrawText(index, xpos, ypos)
+
+As an extension ROOT-files containing canvases may be  defined.
+If an image with name "pict.canvas.gif" appears in the
+documentation a root-file with name "pict.canvas.root" is
+searched for in the same directory. i.e. the convention is to
+replace the suffix .gif by .root  If not found xv is invoked for
+the gif-file. Otherwise the the canvas contained in the
+root-file is drawn. This allows a standard browser to be used
+and still have the possiblity to exploit the interactive
+features of root when showing a canvas. Begin_Html An example
+(for HistPresent) can be found [A HREF="hpr/index.html"]here[/A]
+End_Html 
+Use View Page source to see how it is done.
+
+</pre> 
+</html>
+
+
+

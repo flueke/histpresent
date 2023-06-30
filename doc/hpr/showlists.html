@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>HistPresent startup window (Filelist etc.)</TITLE>
+
+<H3>HistPresent start window</H3>
+<ul>
+<li><a href=attrmacro.html>Edit AttrMacro</a></li> 
+<li><a href=#Help_on_OperRebin>Rebin selected histogram</a></li> 
+<li><a href=#Help_on_operators>Operations on histograms</a></li> 
+<li><a href=#Help_on_ShowFileList>Show Filelist</a></li> 
+<li><a href=#Help_on_ListObjectsInMemory>List Objects in Memory</a></li> 
+<li><a href=#Help_on_HistsFromM_analyze>Hists from M_analyze</a></li> 
+<li><a href=#Help_on_HistsFromProof>Hists from Proof</a></li> 
+<li><a href=#Help_on_SelectionMask>File/Histo Selection Mask</a></li> 
+<li><a href=#Help_on_StackSelected>Stack selected hists</a></li> 
+<li><a href=#Help_on_ShowSelected>Show selected hists</a></li> 
+</ul>
+
+<a NAME=Help_on_operators></a> 
+<H3>Operators</H3>
+If two histograms (or more for Add)
+are selected (Click grey button in Hist list) one can
+perform the following operations: 
++ Add: hist1 + factor*hist2
+- Sub: hist1 - factor*hist2
+* Mul: hist1 * factor*hist2
+* Div: hist1 / (factor*hist2)
+
+The resulting histograms are shown and stored in
+memory with new names. Note that in this case the
+order of selection is important.
+
+If only 1 histogram is selected with operation
+multiply then this gets scaled.
+
+For operation <b>Add</b> any number of selections are
+possible.
+
+<a NAME=Help_on_OperRebin></a> 
+<H3>Rebin selected histogram</H3>
+Rebin a selected histogram using the selected
+(green) value. The new bin content may the sum or
+average of the original bins. 
+A new histogram is created in memory  which may be 
+accessed later by the command <a href=#Help_on_ListObjectsInMemory>List Objects in Memory</a> 
+
+<a NAME=Help_on_rootrc></a> 
+<H3>Edit .rootrc</H3>
+The content of .rootrc is described <a href=rootrc.html>here</a>
+<a NAME=Help_on_ShowFileList></a> 
+<H3>Show Filelist</H3>
+Display a list of root files (.map, .root, .histlist)  in
+current working directory. Ordering may be done
+alphabetically or by modification time.
+If files in other directory are needed (symbolic) links
+can be used.
+<p>
+The <b>File</b> popup menu provides an entry 
+<b>Select ROOT file from any directory</B>. This opens 
+a file selection dialog from which a ROOT file in any 
+directory may be choosen.
+<p>
+Tighter selection can be made by defining a <b>FileSelectionMask</b>. 
+Clicking on a file displays the contents
+(histograms, trees , cuts).The gray square button on the
+left side of the objects name is used to select the object
+for operations like Rebin, Add etc. Selecting a cut in this
+way makes it memory resident and can be used when displaying
+trees and 2-dim histograms. The command Clear Select resets
+all selections.
+<p>
+Subdirectories in ROOT files are supported. In the contents
+list their entries are marked by <b>Dir:</b> 
+<p>
+When a file contains many histograms it can be useful to have
+lists with only a subset. Such a subset can be defined in a
+file e.g. mysubset.histlist. (Note: The Extension .histlist
+is compulsory.) It may contain the name of the file followed
+by the name of the histogram to be selected (one per line)
+separated by a space or only the name of the histogram.
+<p>
+All histograms in such a list may be displayed in one single
+canvas allowing a quick overview on many histograms.
+<p>
+This list can be produced either by an editor or by
+selecting the subset with HistPresent itself (i.e. pressing
+the grey buttons left of the name) and then clicking on
+<b>Compose list</b>.
+A sample session is shown in the attached picture.
+<p>
+A note on names of objects:<br>
+To make full use of the extensions to C++ in CINT names of
+objects should obey C++ naming rules. So only letters,
+numbers and the underscore character should be used.
+HistPresent itself is not protected against C++ constructs
+in names like name(eee). It checks a root file for such
+names and offers to create a new file (extension:_cor.root)
+with all illegal characters replaced by underscores.
+<p>
+<img SRC="ShowList.canvas.gif"  height=650 width=600 align=ABSCENTER>
+
+<a NAME=Help_on_ListObjectsInMemory></a> 
+<H3>List Objects in Memory</H3>
+List objects (histograms, cuts, windows) currently in memory
+This is needed if new histograms are created by <b>Rebin</b>,
+or arithmetic operations.
+
+<a NAME=Help_on_HistsFromM_analyze></a> 
+<H3>Hists from M_analyze</H3> 
+Histograms may be directly fetched from a running M_analyze
+process via a socket connection to a local or remote
+computer. 
+The convention on TcpIp port numbers used is as follows:
+Online running M_analyze uses port 9090 for communication
+with C_analyze and HistPresent. Offline processes use
+port 9091 - 9095, maximum 5 processes are allowed 
+simultanously. The port number used is shown in the
+C_analyze control window and printed during startup 
+of M_analyze.
+<p>
+Notes:<br>
+When invoking this command first time in a HistPresent
+session hostaddress and port are requested. Next invocations
+take the same values. I.e. hostaddress and port cannot be
+altered in the same session.<br>
+At each invocation of the command the histogram list 
+and the current statistics are fetched from M_analyze
+and the command list is build with these values.
+Pressing on a histogram name will fetch a fresh copy
+of the the histogram from M_analyze.<br>
+This also works for the automatic update when using 
+the command <a href=#Help_on_ShowSelected>Show selected hists</a>.
+Caveat: Since histograms are gathered one by one the number
+of entries will in general not reflect the same number of
+events collected.
+
+<a NAME=Help_on_HistsFromProof></a> 
+<H3>Histos from Proof</H3> 
+Histograms may be fetched from a Proof session started from
+the commandline of HistPresent:
+Since HistPresent runs a standard interactive ROOT session
+e.g. a Proof-Lite session may be started:
+
+TProof *proof = TProof::Open("");
+...
+proof->Process("...
+<b>Histos from Proof</b> will find the Proof session,
+issue a GetOutputList() and present the found objects.
+
+<a NAME=Help_on_SelectionMask></a> 
+<H3>File/Histo Selection Mask</H3>
+SelectionMasks may be defined using wildcard or regular
+expression syntax. See <a href=options.html#Help_on_RegExp>Help_on_RegExp</a>
+
+<a NAME=Help_on_ShowSelected></a> 
+<H3>Show selected hists</H3>
+This command displays up to 25 selected histograms in one
+single canvas. Selection is done by pressing the grey button
+in a histogram list which should turn green. Selection may
+be done from different lists.<br>
+Clicking into a histogram will display this with the normal
+options as Fitting, Expanding etc.<br>
+
+In this canvas only the following operations are possible
+(From the Display popup menu)<br>
+<ul>
+<li>
+<B>Show all as selected (Range only) or (Range, Min, Max)</B><br>
+
+First select a histogram with the middle mouse, then adjust
+the desired range by moving the left mouse pressed in the
+axis scale.
+</li>
+<li>
+<B>Calibrate all as selected</B><br>
+
+See <a href=calibration.html>Help_on_Calibration</a>
+</li>
+<li>
+<B>Rebin all</B><br>
+Rebin all histograms with the same rebin value.
+</li>
+<li>
+<b>Activate automatic update</b><br>
+
+This is useful in an online environment. This option allows
+to refresh the display of the histograms in regular intervals.
+The refresh rate (AutoUpdateDelay) may be choosen from the
+Option <b>HistPresent numerical options</b>.
+</li>
+</ul>
+<B>Notes:</B>
+Zooming of the x-y axis is possible however these values will 
+<B>not</B> be remembered. To achieve this one should click 
+into the histogram to get the standard view with all options
+and adjust the desired range.<br>
+To ease this operation for many histograms to be shown in the 
+same range the option <B>Show Always All As First</B> is provided.
+In this case it is sufficient to adjust the range only for
+the first histogram in a list.  
+
+An example is shown in the <a href=#Help_on_ShowExample>attached picture</a>.
+
+<a NAME=Help_on_ShowExample></a> 
+<H3>Example of Show selected histograms</H3>
+<img SRC="ShowSelected.canvas.gif"  height=400 width=600 align=ABSCENTER>
+
+<a NAME=Help_on_StackSelected></a> 
+<H3>Stack selected histograms</H3>
+This command stacks the selected histograms in one plot.
+I.e. the selected histograms are added channel by channel.
+The regions belonging to the individual histograms are
+colored differently. This function only makes sense for 
+1-dim or 2-dim histograms with the same number of channels.
+The display range is taken from the first histogram selected.
+For more info consult the  ROOT documentation for the class
+<b>THStack</b>.<br>
+Selection is done by pressing the grey button
+in a histogram list which should turn green.
+An example is shown in the <a href=#Help_on_ShowExampleStack>attached picture</a>.
+
+<a NAME=Help_on_ShowExampleStack></a> 
+<H3>Example of stacked histograms</H3>
+<img SRC="cstack.canvas.gif"  height=400 width=600 align=ABSCENTER>
+ 
+</HTML>

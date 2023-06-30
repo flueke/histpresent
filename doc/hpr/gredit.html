@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>Graphics editor</TITLE>
+<h3>Graphics editor</h3>
+HistPresent provides an interface to the ROOTs builtin 
+graphics editor adding some extra functionality like
+an edit grid until they are part of ROOT itself.
+<p>
+From the <b>File</b> popup menu one can open a canvas for
+drawing  as A4 - portrait - landscape or user defined. 
+The canvas has buttons giving access to graphic primitives 
+like arrows and curly lines.
+<p>
+To draw e.g. a curly line press the corresponding button in
+the toolbar, than at start of the line and  release at the
+required endpoint.
+For a curly arc press at center and release on the  wanted
+circumference. Then invoke with the right mouse button on
+the curly arc the popup menu and select Phimin and Phmax.
+Angle are measured in degree counter clockwise with 0 at
+the positive X-axis. <p>
+The default attributes may be adjusted from the 
+<b>Graphic_defaults</b> popup menu. This menu allows
+to set the attributes of all objects in the current drawing
+by activating the <b>Set all</b> checkbutton for the 
+desired object. 
+<p>
+<h4>Use of an edit grid</h4>
+An edit grid may be defined, drawn, activated and  removed
+from the <b>Hpr-Edit</b> popup menu. For convenience two grids
+are provided: the real grid at which objects are aligned
+and a visible grid typically choosen 2 times coarser. 
+Due to the finite pixel resolution objects may not be exactly aligned
+at the grid. Or objects may have been placed with the 
+Align_grid_option deactivated. For this a command
+<b>Align objects at grid</b> is provided. This command
+allows a choice for X and Y and all object types separately.   
+The edit grid should normally be removed before the canvas
+is printed. If it is saved to file this is done 
+automatically.
+<p>
+<h4>Import of external objects</h4>
+<p>
+The following objects may be importet:<br>
+  - Histograms<br>
+  - Graphs<br>
+  - Pictures (jpeg, gif, png)<br>
+  - Text / Latex<br>
+<p>
+To insert such an object one first draws a Pad with the
+desired size.
+Then activate <b>Insert histogram</b> from the <b>Hpr-Edit</b>  menu.
+The histogram file / name may be given explicitly or the
+the histogram may be selected from <a href=showlists.html#Help_on_ShowFileList>FileList</a>
+widget. Text-, label- tickmark sizes may be scaled by a factor.
+<p>
+Graphs are inserted in the same way.
+Pictures are inserted given their names. All names ending with
+.jpg and .gif are offered in a listbox.
+
+Text / Latex may be inserted from a text file or from
+a text widget. This widget also provides a listbox
+with the history.
+Text is inserted line by line. On an external file joining
+of lines is accomplished by the backslash character.
+
+ROOTs formala class uses a Latex like syntax. The main
+difference is the hash (#) character which replaces
+Latex s backslash (\) character. Super- Subscripts
+must always be inclosed by braces, even single characters.
+Optionally a filter may be switched on which tries to
+translate Latex to ROOTs Latex.  
+
+<h4>Compound objects</h4>
+Members of compound objects are selected enclosing them by 
+a graphical cut (TCutG). This is defined by selecting the 
+<b>scissors</b> symbol of the toolbar icons.  
+Pressing the left mouse successively at the required points 
+defines the cut. Pressing twice at the same point ends 
+the cut.
+Choosing <b>Mark as compound object</b> allows the members 
+to be shifted ore deleted together.
+<b>Extract as compound object</b> creates a new object 
+which is added the the list of compound objects. 
+The objects in this list are drawn in a separate canvas as  
+icons. Pressing the icon allows insertion in the current
+picture. A scale factor, an angle and the position may be
+choosen. A second scale factor called NDC allows to scale 
+text sizes differently.
+Compound objects may be written to a file and retrieved
+in a later session.
+
+<p>
+<h4>Making the drawing persistent</h4>
+The picture can be written to a root file and retrieved
+later from the contents list of a file.
+It may also be saved as a ROOT macro from the <b>File</b> popup
+entry <b>Save as canvas.C</b>. The latter  however will normally 
+only work for builtin ROOT primitives i.e. the one appearing
+in the editor toolbar at top of the canvas.
+
+</html>

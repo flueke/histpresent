@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>Setting options and parameters</TITLE>
+<PRE>
+<H3>What to display for histogram</H3>
+This allows to adjust what items should be shown when
+displaying a histogram like title, statistics box etc.
+
+<H3>How to display a 1-dim histogram</H3>
+Here error bars, filling and contours may be choosen.
+Fitting of Gaussian optionally with linear background
+when dragging with mouse button 1 pressed can be
+switched on and off here.
+<b>Width + threshold in fpeak</b>
+HistPresent implements a simple peakfinder.
+Here the two relevant parameters may be set.
+
+<H3>Display mode of 2-dim histogram</H3>
+ROOT has many different ways to plot a 2-dim histogram
+like boxes all sorts of lego plots etc.
+
+<H3>Color mode of 2-dim histogram</H3>
+If the color option is used different color palettes
+may be choosen:
+ - Grey scales with highest value black of white
+ - Rainbow colors
+ - User selected color transitions in RGB (red - green - blue)
+   or HLS (hue, lightness, saturation) 
+   These values may be adjusted in real time by sliders
+
+Contour levels and colors may still be modified from 
+the <a href=display.html#Help_on_Contour>Set User Contour</a> popup.
+<b> LogScale_Minimum </b>  
+    This allows to set the minimum when logarithmic sales 
+    are used with 2-dim histograms
+<b> LinScale_Minimum </b>  
+    This allows to set the minimum when linear sales 
+    are used with 2-dim histograms
+
+<H3>Various HistPresent options</H3>
+These options are described in some detail below.
+Also this widget provides its own <b>Help</b> button.
+
+<a href=#Help_on_ShowFitted>Help_on_ShowFitted</a> 
+<a href=#Help_on_RemParTrees>Help_on_RemParTrees</a> 
+<a href=#Help_on_RememberLastSettings>Help_on_RememberLastSettings</a> 
+<a href=#Help_on_RememberZoomings>Help_on_RememberZoomings</a> 
+<a href=#Help_on_AttrMacro>Help_on_AttrMacro</a> 
+<a href=#Help_on_RegExp>Help_on_RegExp</a> 
+<a href=#Help_on_Auto_1dim>Help_on_Auto_1dim</a> 
+<a href=#Help_on_Auto_2dim>Help_on_Auto_2dim</a> 
+
+<b> Max Entries in Histlists</b>
+    When very many histograms are in one file this
+    parameter avoids crashing some X-implementations,
+    default value 333
+<b> AutoUpdateDelay</b>
+    This is the update frequency when using the 
+    <a href=showlists.html#Help_on_ShowSelected>automatic update</a> option.
+
+<H3>Default window sizes and positions</H3>
+Default sizes of windows for 1-dim and 2-dim histograms 
+may be adjusted seperately. Units are in pixels. 
+Each new window is shifted according to the values of
+Window_Shift_X and Y starting at Window_Top_X and Y.
+
+The window size of histogram lists can be adjusted
+by the value of <b>Window_X_Width_List</b> as follows:
+
+> 0 : take value as it is in units of pixels
+= 0 : take default value (250)
+-1  : calculate width to fit longest item without
+      using a scrollbar
+
+The parameter Project_Both_Ratio determines the
+space left for the original scatter plot when the
+the Display action <b>ProjectBoth</b> is used.
+
+<H3>Graphics Attr (Canvas, Pad..)</H3>
+This menu gives access to most parameters in the ROOT class
+<b>TStyle</b>.
+E.g. From here one can set the Pad right margin to give more
+space if a color palette with long numbers are drawn in 
+2-dim hist with <b>colz</b> option.
+To control the numbers of digits used in labels (i.e. before
+powers of ten are used) select the <b>X axis attributes</b>
+and then <b>Max digits used in labels</b>
+N.b.: X, Y, Z axis attributes my be changed seperately or
+      all at time from the <b>X axis attributes</b> widget
+      when pressing <b>Set Y, Z axis to same value</b>.
+Caveat: By setting color values to "0" you may make parts
+        or all the picture invisible.
+
+<a NAME=Help_on_ShowFitted></a> 
+<H3>Display fitted curves</H3>
+This option controls which curves are drawn if a function
+is fitted to a 1_dim histogram. (see <a href=fitting.html>Help_on_Fit_1dim_Menu)</a>
+This function is normally is a sum of several components
+(Gauss, linear background). As default only the sum of 
+the components are drawn. If this option is active all
+components are shown allowing a better visual control of 
+the fit. An example is given 
+<img SRC="Fitted_Curves.canvas.gif"  height=400 width=600 align=ABSCENTER>
+
+<a NAME=Help_on_RemParTrees></a> 
+<H3>Remember hist limits when showing trees</H3>
+When displaying trees (ntuples) limits for histograms 
+(number of channels, lower, upper edge), these values
+may be remembered for each tree entry between sessions.
+
+<a NAME=Help_on_RememberLastSettings></a> 
+<H3>Help_on_RememberLastSettings</H3>
+Remember expand settings (set via marks), calibrations etc.
+This option allows to remember for the same and future sessions:
+expand limits, log scales, axis titles, 
+calibrations i.e. the values of the lower and upper edge of a 
+1-dimensional histogram.
+Zoomings done by dragging the left mouse in the scale are
+not remembered by this option. To do achieve this the option
+<b>RememberZoomings</b> must be activated.
+
+<a NAME=Help_on_RememberZoomings></a> 
+<H3>Help_on_RememberZoomings</H3>
+Pressing the left mouse button in the scale of a histogram
+dragging to the required limit allows to zoom in the picture.
+Note: The cursor symbol must a hand with forefinger.
+This option allows to pass these limits to later sessions.
+
+<a NAME=Help_on_AttrMacro></a> 
+<H3>Invoking attributes macro</H3>
+Each time a histogram is displayed a macro (FH_setdefaults.C)
+may be executed. This macro may be edited from the HistPresent
+start menu: <b>EditAttrMacro</b>
+This option can be switched on or off.
+
+
+<a NAME=Help_on_RegExp></a> 
+<H3>Use Regular expression syntax</H3>
+Normally wild card syntax (e.g. ls *.root to list all
+files ending with .root) is used in file/histo selection
+masks. One may switch to the more powerful Regular expression.
+For details consult a book on Unix.
+
+
+<a NAME=Help_on_Auto_1dim></a> 
+<H3>Auto exec macro 1-dim</H3>
+A macro (default name auto_exec_1.C) is executed when the left
+mouse button is pressed in a pad containing a 1-dim histogram. 
+The default behaviour is as follows:
+   In a pad with several hists: display this hist enlarged 
+   On a histogram contour:      print info for this channel
+   In the statistics box:       print full statistics
+   On a function:               print its parameters.
+
+
+<a NAME=Help_on_Auto_2dim></a> 
+<H3>Auto exec macro 2-dim</H3>
+A macro (default name auto_exec_2.C) is executed when the left
+mouse button is pressed in a pad containing a 2-dim histogram. 
+The default behaviour is as follows:
+   In a pad with several hists: display this hist enlarged 
+
+   When the mouse is moved:     
+   Open a new window and display a histogram containing the
+   projection on the x-axis taking only the channels with the
+   y-values pointed to by the mouse.
+   This feature can be switched by the options:
+
+Auto exec project X 
+and
+Auto exec project Y 
+</PRE>
+</HTML>

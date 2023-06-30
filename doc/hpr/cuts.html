@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<HTML>
+<style type="text/css">
+  body { margin-left: +10%; margin-right: +10%; }
+</style>
+<link type="text/css" rel="stylesheet" href="style.css">
+<TITLE>How to use Cuts (2-dim histos) and Windows </TITLE>
+
+<H3>Cuts and Windows</H3>
+<a href=#Help_on_Cuts>Cuts and Windows</a> 
+<a href=#Example_Window_1D>Example of 1-dim Window</a> 
+<a href=#Help_on_SaveCuts>SaveCuts as ASCII file</a> 
+<a href=display.html/Help_on_Mark>Help_on_Marks</a> 
+<a href=#Help_on_InteractCuts>Interaction with cuts</a> 
+
+<a NAME=Help_on_Cuts></a> 
+<H3>Cuts</H3>
+The command <b>InitCut</b> allows to select an area enclosed
+by a polygone to be used as a cut in expand and function
+fitting. Corners are set by clicking the left mouse button
+in the scatterplot. Successive clicks at the same position
+ends the input. Any number of cuts are possible. This
+commands adds the defined cut to the active ones.
+<p>
+Cuts are stored and retrieved by names. A default name is
+provided which can be changed during creation or by invoking 
+a popup menu for the cut by pressing the right mouse on
+the contour line of the cut.
+
+<p>
+Windows in 1-dim histograms can be defined with the
+command <b>MarksToWindow</b>. (See also <a href=display.html#Help_on_Mark> Help on Marks</a>)
+<p>
+To use a cut stored on a file one proceeds as follows:<br>
+Pressing the field with the file name in a <a href=display.html#Help_on_ShowFileList>filelist</a>
+will display the contents of the file including the cuts.
+Pressing the grey button on the left side of the name of the cut 
+will bring this into memory.<br>
+The item <b>ListCut</b> from the <b>Cuts/Windows</b> popup 
+lists cuts currently in  memory. Active cuts are
+marked green. Pressing the select button toggles between
+active and passive. Pressing on the field with the name
+the values are displayed in a table an can be modified.
+See <a href=#Example_Window_1D>Example of a 1-dim Window</a>. 
+<p>
+Cuts and windows can be written to and read from a file
+(either root file or ASCII file ) See <a href=#Help_on_SaveCuts>Help_on_SaveCuts</a>
+<p>
+W a r n i n g:
+The number of entries when applying a cut to a 2dim histogram
+might differ from the result when applying the same cut 
+in a replay program or when showing data stored in a root tree.
+This is because the x-y values in a 2dim histogram are taken
+from the bincenter, the original real values are lost during
+filling. In the replay program the real values are used.
+This effect is especially big if the cut traverses regions
+where the contents density rapidly changes.
+</p>
+";
+
+<a NAME=Example_Window_1D></a> 
+<H3>Example of a 1-dim Window</H3>
+<img SRC="Window_1D.canvas.gif"  height=600 width=800 align=ABSCENTER>
+
+<a NAME=Help_on_SaveCuts></a> 
+<H3>Save cuts as ASCII file</H3>
+2-dim windows (cuts) can be written to and read from an
+ASCII file. The format is as follows:
+<p>
+Window1name 
+npoints 
+x1 y1 x2 y2 
+.. 
+Window2name
+npoints 
+etc. 
+<p>
+If a file contains 2-dim windows a commandline is
+added in the filelist to write out the windows. In the
+File popup menu of the HistPresenter main window a command
+is provided to read in the windows. The windows are put
+into memory and can be accessed in the normal way from the
+popup menus provided for 2-dim histograms.
+<a NAME=Help_on_InteractCuts></a> 
+Once a cut has been constructed it can be moved around or 
+modified with the left mouse button. At the time the button
+is released the statistics inside the cut is calculated
+and one line with: Content, MeanX, SigmaX, MeanY and SigmaY
+is printed on the terminal window. When pressing key <b>m</b> 
+inside the canvas a marker with this parameters is generated.
+These markers can later be used to fit a polynomial through
+them. See  <a href=fitting#Help_on_Fit_2dim>Help_on_Fit_2dim</a>
+
+</HTML>
