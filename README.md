@@ -9,10 +9,13 @@ https://github.com/flueke/marabou).
 The code was extracted from the MARaBOU sources, CMake build scripts have been
 added and compile issues have been fixed (6/2023).
 
+Update 4/2025: ported to ROOT-6.34. This removes all PROOF based features.
+
 Build
 -----
 
-Requires ROOT-6.28 or later. Uses ROOTSYS to locate the ROOT installation.
+Requires ROOT-6.28 or later. Uses ROOTSYS to locate the ROOT installation. Use
+`source <path-to-root>/bin/thisroot.sh` to setup your environment.
 
     git clone https://github.com/flueke/histpresent
     mkdir -p histpresent/build
