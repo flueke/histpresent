@@ -219,7 +219,6 @@ enum EHfromASCIImode { kNotDefined, kSpectrum, kSpectrumError, k1dimHist,
    void ShowCanvas(const char* , const char*, const char*, const char* bp =0);
    void ShowContour(const char*, const char*, const char*, const char* bp =0);
    void ShowGraph(const char*, const char* , const char*, const char* bp =0);
-	void HistsFromProof(const char* bp = NULL);
    void ComposeList(const char* bp =0);
    void ShowList(const char* , const char*, const char* bp =0);
    void PrintCut(const char* , const char*, const char* bp =0);

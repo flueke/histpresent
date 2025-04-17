@@ -31,11 +31,11 @@ public:
    inline Stat_t GetEntries() const {return fEntries;}
    inline Stat_t GetSumofw() const {return fSumofw;}
    inline Stat_t GetMean() const {return fMean;}
-   inline Stat_t GetSigma() const {return fSigma;}   
+   inline Stat_t GetSigma() const {return fSigma;}
    TH1* GetHist() const {return fHist;}
-   Int_t GetDimension() const {return fDim;};        // Get histogram dimension  
-   void  SetCycle(Int_t cycle) {fCycle = cycle;}; 
-   Int_t GetCycle() const {return fCycle;}; 
+   Int_t GetDimension() const {return fDim;};        // Get histogram dimension
+   void  SetCycle(Int_t cycle) {fCycle = cycle;};
+   Int_t GetCycle() const {return fCycle;};
    void Print(Option_t * Option) const { TObject::Print(Option); }
    Int_t Print(ostream & ostr) const;                      // print out one line
 
@@ -84,13 +84,13 @@ public:
 
 class TMrbStatistics: public TNamed {
 public:
-   TMrbStatistics(){fStatEntries=new TList(this);};
+   TMrbStatistics(){fStatEntries=new TList();};
 
    TMrbStatistics(const char *);
 
    ~TMrbStatistics();
 
-   Int_t Init();              // find hists and initialize table    
+   Int_t Init();              // find hists and initialize table
    Int_t Update();            // go through list of hists and update values
    Int_t Fill();              // fill stats for hists in memory
    Int_t Fill(TDirectory *);       // fill stats for hists in root file

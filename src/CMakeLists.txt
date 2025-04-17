@@ -16,7 +16,6 @@ set(HISTPRESENT_ROOT_COMPONENTS
     ROOT::HistPainter
     ROOT::Net
     ROOT::Physics
-    ROOT::Proof
     ROOT::Rint
     ROOT::RIO
     ROOT::Spectrum

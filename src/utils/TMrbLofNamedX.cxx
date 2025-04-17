@@ -6,8 +6,8 @@
 // Keywords:
 // Author:         R. Lutter
 // Mailto:         <a href=mailto:rudi.lutter@physik.uni-muenchen.de>R. Lutter</a>
-// Revision:       $Id: TMrbLofNamedX.cxx,v 1.12 2009-04-20 07:54:57 Rudolf.Lutter Exp $       
-// Date:           
+// Revision:       $Id: TMrbLofNamedX.cxx,v 1.12 2009-04-20 07:54:57 Rudolf.Lutter Exp $
+// Date:
 //////////////////////////////////////////////////////////////////////////////
 
 namespace std {} using namespace std;
@@ -309,7 +309,7 @@ void TMrbLofNamedX::Print(ostream & Out, const Char_t * Prefix, UInt_t Mask) con
 	Bool_t negFlag;
 	Bool_t firstBit;
 	TMrbNamedX * k;
-	
+
 	if (this->GetLast() == -1) {
 		gMrbLog->Err() << "No indices defined" << endl;
 		gMrbLog->Flush(this->ClassName(), "Print");
@@ -509,7 +509,7 @@ UInt_t TMrbLofNamedX::FindPattern(const Char_t * IndexString, UInt_t FindMode, c
 // Keywords:
 //////////////////////////////////////////////////////////////////////////////
 
-	register Int_t start, end, lng, sepl;
+	Int_t start, end, lng, sepl;
 	UInt_t pattern;
 	TMrbNamedX * kp;
 	TString sepStr;
@@ -611,7 +611,7 @@ Bool_t TMrbLofNamedX::FindByDialog(TString & Result,
 	cout << "Indices are ";
 	if (FindMode & TMrbLofNamedX::kFindIgnoreCase) cout << "NOT ";
 	cout << "case sensitive ";
-	
+
 	cout << "and may ";
 	if (!(FindMode & TMrbLofNamedX::kFindUnique)) cout << "NOT ";
 	cout << "be abbreviated" << endl;

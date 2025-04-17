@@ -43,7 +43,6 @@
 #include "TLegend.h"
 #include "TLegendEntry.h"
 #include "TQObject.h"
-#include "TProof.h"
 #include "TBenchmark.h"
 
 #include "CmdListEntry.h"
@@ -422,7 +421,7 @@ void HistPresent::RecursiveRemove(TObject * obj)
 void HistPresent::HandleTerminate(Int_t status)
 {
 	gHprTerminated = 1;
-	
+
 	if ( gHprDebug > 0)
 		cout << setblue << "HandleTerminate called, status " << status << setblack << endl;
 	if (cHPr != nullptr && gHprClosing == 0) {
@@ -507,13 +506,6 @@ void HistPresent::ShowMain()
 	"Show objects (hists, windows, functions currently in memory",hint_delay);
 	y-=dy;
 
-	cmd="gHpr->HistsFromProof()";
-	tit="Histos from Proof";
-	b = CommandButton(cmd,tit,x0,y,x1,y+dy);
-	b->SetToolTipText(
-	"Get histograms from proof output list",hint_delay);
-	y-=dy;
-
 	cmd="gHpr->ShowContents(\"Socket\",\"\")";
 	tit="Hists from M_analyze";
 	b = CommandButton(cmd,tit,x0,y,x1,y+dy);
@@ -546,7 +538,7 @@ void HistPresent::ShowMain()
 	b->SetToolTipText(
 	"Stack selected histograms with a scale applied to each",hint_delay);
 	y-=dy;*/
-	
+
 	cmd = "gHpr->ShowSelectedHists()";
 	tit = "Show selected hists";
 	b = CommandButton(cmd,tit,x0,y,x1,y+dy);
@@ -631,7 +623,7 @@ void HistPresent::ShowFiles(const char *how, const char */*bp*/)
 		fname = na;
 		if (!fname.EndsWith(".root") && !fname.EndsWith(".histlist"))
 			continue;
-		if ( fUseFileSelMask && fFileSelMask.Length() > 0 
+		if ( fUseFileSelMask && fFileSelMask.Length() > 0
 			&& !Hpr::IsSelected(fname, &fFileSelMask, fFileUseRegexp) )
 				continue;
 		if ( fUseFileSelFromRun && fFileSelFromRun >= 0 && fFileSelToRun > 0
@@ -668,11 +660,11 @@ void HistPresent::ShowFiles(const char *how, const char */*bp*/)
 	if ( GeneralAttDialog::fMaxFileListEntries <= 0 )
 		GeneralAttDialog::fMaxFileListEntries = 100;
 	if ( nfiles > GeneralAttDialog::fMaxFileListEntries ) {
-		cout << endl<< setred << "More than " << GeneralAttDialog::fMaxFileListEntries 
+		cout << endl<< setred << "More than " << GeneralAttDialog::fMaxFileListEntries
 		<< " selected files in directory" << endl;
 		cout << "Please reduce number of files in directory" << endl <<
 		"or apply a \"File selection mask\"" << setblack << endl;
-		cout<< setblue << "Another " << nfiles - GeneralAttDialog::fMaxFileListEntries << 
+		cout<< setblue << "Another " << nfiles - GeneralAttDialog::fMaxFileListEntries <<
 		" entries are not shown" << endl;
 		cout << setblack;
 		nfiles = GeneralAttDialog::fMaxFileListEntries;
@@ -680,7 +672,7 @@ void HistPresent::ShowFiles(const char *how, const char */*bp*/)
 	}
 	if ( GeneralAttDialog::fSkipFirst > 0 )
 		cout << setblue << "First " << GeneralAttDialog::fSkipFirst
-		<< " entries  skipped" << setblack << endl;  
+		<< " entries  skipped" << setblack << endl;
 
 	if (fCmdLine->GetSize() <= 0) {
 		Int_t buttons= kMBYes | kMBNo, retval=0;
@@ -782,37 +774,7 @@ void HistPresent::TurnButtonGreen(TVirtualPad ** pad)
 //   cout << " Green" << setbase(16) << gPad << endl;
 	*pad=gPad;
 }
-//________________________________________________________________________________________
 
-void HistPresent::HistsFromProof(const char* bp)
-{
-	if (      gROOT->GetListOfProofs()->GetSize() == 0 ) {
-		cout << "No proof session found" << endl;
-		return;
-	} else if ( gROOT->GetListOfProofs()->GetSize()  > 1 ) {
-		cout << "Warning: more than one proof session found" << endl;
-	}
-//	TProof * proof = (TProof*)gROOT->GetListOfProofs()->At(0);
-	TList * hlist = gProof->GetOutputList();
-	if ( hlist->GetSize() == 0 ) {
-		cout << "No output objects found" << endl;
-		return;
-	}
-	TIter next(hlist);
-	TObject *obj = NULL;
-	Int_t nh = 0;
-	while ( obj = next() ) {
-		if ( obj->InheritsFrom("TH1") ) {
-			((TH1*)obj)->SetDirectory(gROOT);
-			nh++;
-		}
-	}
-	if ( nh == 0 ) {
-		cout << "No histograms found" << endl;
-		return;
-	}
-	ShowContents("Memory","",bp);
-}
 //________________________________________________________________________________________
 
 void HistPresent::ShowContents(const char *fname, const char * dir, const char* bp)
@@ -877,14 +839,14 @@ void HistPresent::ShowContents(const char *fname, const char * dir, const char* 
 			b->Update();
 		}
 	}
-	
+
 	Int_t anything_to_delete = 0;
 	if (strstr(fname,".root")) {
 		TFile * rfile = NULL;
 		rfile = TFile::Open(fname);
 		if ( rfile == NULL ) {
 			cout << setred << "Cant find keys, something wrong with file: " << fname << endl
-			<< " For more info uncheck \"Suppress warning messages\" from Hpr-Options menu" 
+			<< " For more info uncheck \"Suppress warning messages\" from Hpr-Options menu"
 			<< setblack << endl;
 			return;
 		}
@@ -1023,7 +985,7 @@ void HistPresent::ShowContents(const char *fname, const char * dir, const char* 
 	Int_t not_shown = 0;
 	if (nstat > 0) {
 		if ( fUseHistSelMask && fHistSelMask.Length() > 0) {
-			cout << setblue << "Using selectionmask: " << fHistSelMask 
+			cout << setblue << "Using selectionmask: " << fHistSelMask
 			<< setblack << endl;
 		}
 		TMrbStatEntry * stent;
@@ -1110,9 +1072,9 @@ void HistPresent::ShowContents(const char *fname, const char * dir, const char* 
 		}
 	}
 	if ( fUseHistSelMask ) {
-		cout << "Total number of hists: " << n_enter 
+		cout << "Total number of hists: " << n_enter
 		<< " Selected: " <<  fCmdLine->GetSize() << endl;
-		if ( not_shown > 0 ) 
+		if ( not_shown > 0 )
 			cout << "Another: " << not_shown << " hists are not shown" << endl;
 	}
 	//  windows
@@ -1198,10 +1160,10 @@ void HistPresent::ShowContents(const char *fname, const char * dir, const char* 
 				anything_to_delete++;
 			} else {
 				if (not_shown <= 0){
-					cout << setred << endl<< 
+					cout << setred << endl<<
 					"Too many entries in list this might crash X." << endl;
 					cout << "Please use selection mask to reduce number\n\
-								of entries below: " 
+								of entries below: "
 					<<  GeneralAttDialog::fMaxListEntries  << endl;
 					cout << "On your own risk you may increase value beyond: "
 					<< GeneralAttDialog::fMaxListEntries << endl;
@@ -1272,7 +1234,7 @@ void HistPresent::ShowContents(const char *fname, const char * dir, const char* 
 			fCmdLine->Add(new CmdListEntry(cmd, title, hint, sel));
 		}
 	}
-	
+
 	if (anything_to_delete > 0) {
 		if (maxkey > 1) {
 			cmd = "gHpr->PurgeEntries(\"";
@@ -1478,7 +1440,7 @@ void HistPresent::ComposeList(const char* /*bp*/)
 //   listname += fHlistSuffix;
 	cout << "ok " << ok << " " << listname << endl;
 	if ( ok < 0) return;
-	
+
 	if (!gSystem->AccessPathName(listname)) {
 		TString question=listname;
 		question += " exists, Overwrite?";
@@ -1853,7 +1815,7 @@ void HistPresent::ShowFunction(const char* fname, const char* dir, const char* n
 		cout  << endl << "----------------------------" << endl;
 
 		if (func->InheritsFrom("TF2") ) {
-			new HprFunc2((TF2*)func); 
+			new HprFunc2((TF2*)func);
 		} else {
 			new TCanvas();
 			func->Draw();
@@ -2244,7 +2206,7 @@ TH1* HistPresent::GetSelHistAt(Int_t pos, TList * hl, Bool_t try_memory,
 	}
 //   if (hist) hist->Print();
 	if (hist && (fname == "Memory" || try_memory)) {
-		if (gHprDebug > 0) 
+		if (gHprDebug > 0)
 			cout << "GetSelHistAt: " << fname << "|" << hname << "|" << dname << endl;
 		return hist;
 	}
@@ -2998,7 +2960,7 @@ TH1* HistPresent::GetHist(const char* fname, const char* dir, const char* hname)
 			newhname += "_";
 		}
 		newhname += shname.Data();
-		
+
 		while (newhname.Index(notascii) >= 0) {
 			newhname(notascii) = "_";
 		}
@@ -3254,7 +3216,7 @@ void HistPresent::CloseAllCanvases()
 //			cout << "CloseAllCanvases: " << htc << " " << htc->GetName()<< endl;
 		TString cn(htc->GetName());
 		if ( cn == "cHPr" || cn == "FileList" || cn.EndsWith("histlist")
-			|| cn == "ContentList"  || cn == "Windows"|| cn == "Cuts" 
+			|| cn == "ContentList"  || cn == "Windows"|| cn == "Cuts"
 			|| cn.BeginsWith("Tree:")) continue;
 		htc->Disconnect("TPad", "Modified()");
 		TRootCanvas *rc = (TRootCanvas*)htc->GetCanvasImp();
@@ -3471,7 +3433,7 @@ void HistPresent::ShowCanvas(const char* fname, const char* dir, const char* nam
 		if (strlen(dir) > 0) fRootFile->cd(dir);
 		c = (HTCanvas*)gDirectory->Get(sname);
 		c->SetName(sname);
-		
+
 	} else {
 		c=(HTCanvas*)gROOT->GetListOfCanvases()->FindObject(sname);
 	}
@@ -3493,7 +3455,7 @@ void HistPresent::ShowCanvas(const char* fname, const char* dir, const char* nam
 		WindowSizeDialog::fNwindows++;
 		c->cd();
 		Int_t ngr = FindGraphs(gPad, logr);
-		
+
 		if (ngr > 0) {
 			gStyle->SetOptStat(0);
 /*			TObject *objg;
@@ -3815,7 +3777,7 @@ void HistPresent::HandleDeleteCanvas( HTCanvas *htc)
 			cout << "HandleDeleteCanvas: fh->GetSelHist() " << hh << endl;
 		if (!hh || !hh->TestBit(TObject::kNotDeleted)) return;
 		TString histname(hh->GetName());
-		// care for renamed histos 
+		// care for renamed histos
 		TRegexp supi("_has_supimp");
 		histname(supi) = "";
 // does it end with a _number
@@ -3823,7 +3785,7 @@ void HistPresent::HandleDeleteCanvas( HTCanvas *htc)
 		Int_t indus = histname.Index(us_num);
 		if (indus > 1) histname.Resize(indus);
 		if (gHprDebug > 1)
-			cout << "HandleDeleteCanvas hname: " <<  hh->GetName()<< " histname: " 
+			cout << "HandleDeleteCanvas hname: " <<  hh->GetName()<< " histname: "
 			<< histname << endl;
 		TIter next(fHistLists);
 		TIter *next1;
@@ -4004,7 +3966,7 @@ void HistPresent::ShowGraph(const char* fname, const char* dir, const char* name
 		}
 		TRegexp sa("SAME");
 		opt2d(sa) = "";
-		if ( nuse <= 0 ) 
+		if ( nuse <= 0 )
 			nuse = np;
 		Double_t texpected = -3 + 0.0024 * nuse + 2.30782e-06 * nuse*nuse;
 //		Double_t texpected = 4 * TMath::Power(3, graph2d->GetN() / 900.) - 10;
@@ -4088,7 +4050,7 @@ void HistPresent::ShowGraph(const char* fname, const char* dir, const char* name
 			 (Int_t)graph1d->GetXaxis()->GetXmax() > year2000) {
 			graph1d->GetXaxis()->SetTimeDisplay(1);
 		}
-		
+
 		if (gROOT->GetForceStyle()) {
 			graph1d->SetLineStyle  (env.GetValue("GraphAttDialog.fLineStyle",  1));
 			graph1d->SetLineWidth  (env.GetValue("GraphAttDialog.fLineWidth",  1));
@@ -4218,9 +4180,9 @@ void HistPresent::SuperimposeGraph(TCanvas * current, Int_t mode)
 	Size_t  lLWidth   = gr_exist->GetLineWidth();
 	Style_t lMStyle   = gr_exist->GetMarkerStyle();
 	Size_t  lMSize    = gr_exist->GetMarkerSize();
-	
+
 	Double_t  axis_offset = env.GetValue("SuperImposeGraph.axis_offset", 0.);
-	
+
 	Double_t label_offset = 0.01;
 	Color_t def_col = gr_exist->GetMarkerColor();
 //	Color_t def_col = 2;
@@ -4237,7 +4199,7 @@ void HistPresent::SuperimposeGraph(TCanvas * current, Int_t mode)
 	static Color_t axis_color = env.GetValue("SuperImposeGraph.axis_color", def_col);
 	*/
 	static Int_t   lFill      = env.GetValue("SuperImposeGraph.fFill", 0);
-	
+
 	Double_t new_scale = 1;
 	TString axis_title;
 	Int_t   lLegend      = env.GetValue("SuperImposeGraph.DrawLegend", 1);
